@@ -1,6 +1,7 @@
 -r prod.txt
 
 pytest
+pytest-runner
 tox
 coverage
 pytest-cov
