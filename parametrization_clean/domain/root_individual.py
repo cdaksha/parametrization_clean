@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+
+"""Module with immutable structure to store reference training set information.
+Potentially includes DFT energies, weights, parameter boundaries (low, high)."""
+
+# Standard library
+from typing import List, Dict
+
+
+# 3rd party packages
+
+# Local source
+
+
+class Borg(object):
+    """Avoid Singleton anti-pattern, but ensure shared state (if many instances are created)."""
+    _shared_state = {}
+
+    def __init__(self):
+        self.__dict__ = self._shared_state
+
+
+class RootIndividual(Borg):
+
+    def __init__(self, dft_energies: List[float], weights: List[float],
+                 root_ffield: Dict[int, List], param_keys: List[List[int]]):
+        """Root individual to store data from reference training set that needs to be stored only once.
+        For example, the weights of the error, DFT energies, parameter bounds only need to be stored once.
+        Input structures are converted to tuples to prevent mutation.
+
+        :param dft_energies: Tuple containing DFT energies, used to compute error.
+        :param weights: Tuple containing weights, used to compute error.
+        :param root_ffield: Dictionary mapping section number to data contained in that section.
+        :param param_keys: List of keys pointing to values in the ffield object.
+        """
+        super().__init__()
+        self.dft_energies = tuple(dft_energies)
+        self.weights = tuple(weights)
+        self.root_ffield = root_ffield
+        self.param_keys = param_keys
