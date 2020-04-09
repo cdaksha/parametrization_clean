@@ -21,7 +21,7 @@ def root_individual(dft_energies, weights, root_ffield, param_keys):
 def individual():
     params = [0.5, 0.4, 1.0, -4.7, 8.6]
     reax_energies = [43.2, 10.6, -174.2, 1008.4]
-    individual = Individual(params=params, reax_energies=reax_energies)
+    individual = Individual(params=params, reax_energies=reax_energies, error_calculator=ReaxError)
     return individual
 
 
@@ -34,7 +34,7 @@ def test_individual_init():
 
 
 def test_individual_total_error(individual, root_individual):
-    assert abs(individual.total_error(root_individual, ReaxError) - 871.9892) <= 1e-4
+    assert abs(individual.total_error(root_individual) - 871.9892) <= 1e-4
 
 
 def test_individual_update_ffield(individual, root_individual):
@@ -74,6 +74,15 @@ def test_individual_update_ffield(individual, root_individual):
                         dont_check = {0, 1, 2}
                         if j not in dont_check:
                             assert v1[i][j] == v2[i][j]
+
+
+def test_individual_from_root_individual(root_individual):
+    individual_from_root = Individual.from_root_individual(root_individual)
+    assert isinstance(individual_from_root, Individual)
+    assert individual_from_root.params == root_individual.root_params
+    assert individual_from_root.reax_energies is None
+    assert individual_from_root.ffield is None
+    assert individual_from_root.cost is None
 
 
 @pytest.mark.usefixtures('get_individuals')

@@ -32,9 +32,10 @@ class Individual(object):
 
         self.ffield = self.update_ffield(root_individual) if root_individual else None
         self.cost = self.total_error(root_individual, error_calculator) if root_individual else None
+        self.error_calculator = error_calculator
 
-    def total_error(self, root_individual: RootIndividual, error_calculator: IErrorStrategy) -> float:
-        return sum(error_calculator.error(reax_val, dft_val, weight) for reax_val, dft_val, weight in
+    def total_error(self, root_individual: RootIndividual) -> float:
+        return sum(self.error_calculator.error(reax_val, dft_val, weight) for reax_val, dft_val, weight in
                    zip(self.reax_energies, root_individual.dft_energies, root_individual.weights))
 
     def update_ffield(self, root_individual: RootIndividual):
@@ -45,6 +46,13 @@ class Individual(object):
         for param, key in zip(self.params, root_individual.param_keys):
             set_param(key, ffield, param)
         return ffield
+
+    @classmethod
+    def from_root_individual(cls, root_individual: RootIndividual):
+        """Constructor from RootIndividual.
+        Same functionality as calling Individual(params=root_individual.params).
+        """
+        return cls(params=root_individual.root_params)
 
     # For usage of min/max functions in determining best/worst individuals
     def __eq__(self, other):

@@ -10,6 +10,7 @@ from typing import List, Dict
 # 3rd party packages
 
 # Local source
+from parametrization_clean.domain.helpers import get_param
 
 
 class Borg(object):
@@ -38,3 +39,9 @@ class RootIndividual(Borg):
         self.weights = tuple(weights)
         self.root_ffield = root_ffield
         self.param_keys = param_keys
+
+        # Root parameters from the reference training set
+        self.root_params = self.extract_params()
+
+    def extract_params(self) -> List[float]:
+        return [get_param(key, self.root_ffield) for key in self.param_keys]

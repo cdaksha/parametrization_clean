@@ -11,6 +11,11 @@ from parametrization_clean.domain.mutation.strategy import IMutationStrategy
 from parametrization_clean.domain.individual import Individual
 
 
+# TODO: Refactor to only use one mutation parameter ?
+# Can create abstraction for MultiMutation (and MultiCrossover) schemes
+# Abstraction can require the different parameters one wishes to use
+# Abstraction can require probabilities that can be associated with each parameter
+# TODO: Use builder design pattern for mutation/crossover params instead of kwargs?
 class GaussianMutate(IMutationStrategy):
 
     @staticmethod
@@ -20,13 +25,15 @@ class GaussianMutate(IMutationStrategy):
         Allows usage of multiple scaling factors for the normal distribution for mutation.
         Each scaling factor needs a corresponding probability (gauss_frac) of using that given factor.
         """
-        stds = kwargs.get('gauss_std', [0.1])
-        probabilities = kwargs.get('gauss_frac', [1.0])
-        u = random.uniform(0, 1)
-        cumulative_probability = 0
-        for std, probability in zip(stds, probabilities):
-            if cumulative_probability < u <= (cumulative_probability + probability):
-                new_params = [param + param * random.gauss(0, std) for param in parent.params]
-                break
-            cumulative_probability += probability
+        std = kwargs.get('gauss_std', 0.1)
+        # stds = kwargs.get('gauss_std', [0.1])
+        # probabilities = kwargs.get('gauss_frac', [1.0])
+        # u = random.uniform(0, 1)
+        # cumulative_probability = 0
+        # for std, probability in zip(stds, probabilities):
+        #     if cumulative_probability < u <= (cumulative_probability + probability):
+        #         new_params = [param + param * random.gauss(0, std) for param in parent.params]
+        #         break
+        #     cumulative_probability += probability
+        new_params = [param + param * random.gauss(0, std) for param in parent.params]
         return Individual(new_params)

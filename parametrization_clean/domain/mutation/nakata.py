@@ -25,8 +25,8 @@ class NakataMutate(IMutationStrategy):
 
         :return: New Individual after mutation.
         """
-        scale = kwargs.get('param_bounds', 0.1)
-        low = kwargs.get('rand_lower', -1.0)
-        high = kwargs.get('rand_higher', 1.0)
+        scale = kwargs.get('nakata_scale', 0.1)
+        low = kwargs.get('nakata_rand_lower', -1.0)
+        high = kwargs.get('nakata_rand_higher', 1.0)
         new_params = [param + (scale * random.uniform(low, high) * param) for param in parent.params]
         return Individual(new_params)
