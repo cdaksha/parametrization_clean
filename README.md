@@ -1,9 +1,17 @@
-# Parametrization
-Contains Python files and Bash scripts for Parametrization project. Uses the genetic algorithm (GA) algorithm as well as an artificial neural network (ANN) to optimize a ReaxFF parameter set.
+# ReaxFF Parametrization with Clean Architecture
+Contains Python files and Bash scripts for Parametrization project. Uses the genetic algorithm (GA) algorithm as well
+as an artificial neural network (ANN) to optimize a ReaxFF parameter set.
+
+Refactored ReaxFF parametrization project that attempts to comply with Robert Martin's Clean Architecture guidelines.
+Using the generational genetic algorithm and neural net (if enabled), runs one generation, awaiting submission of
+standalone ReaxFF optimizations.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The project files are available as a GitHub repository [here](https://github.com/cdaksha/parametrization_clean).
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing
+purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -67,7 +75,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 

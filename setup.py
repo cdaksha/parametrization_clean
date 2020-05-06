@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
-"""The setup script."""
+"""Build script for setuptools. Tells setuptools about your package (such as the name and version)
+as well as which code files to include.
+"""
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
+with open("README.md", 'r') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
+with open("HISTORY.md", 'r') as history_file:
     history = history_file.read()
 
 requirements = ['Click>=7.0', ]
@@ -19,19 +21,15 @@ test_requirements = ['pytest>=3', ]
 setup(
     author="Chad Daksha",
     author_email='daksha@udel.edu',
-    python_requires='>=3.5',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
     ],
-    description="Refactored ReaxFF parametrization project that uses genetic algorithm and artificial neural network, also moreso complying with clean architecture.[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[A[B[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[, that uses genetic algorithm and artificial neural network, so that it is moreso compliant with clean architecture.",
+    description="ReaxFF parameter optimization scheme using generational genetic algorithm and neural networks.",
     entry_points={
         'console_scripts': [
             'parametrization_clean=parametrization_clean.cli:main',
@@ -40,9 +38,10 @@ setup(
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
+    long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='parametrization_clean',
-    name='parametrization_clean',
+    name='parametrization_clean-cdaksha',
     packages=find_packages(include=['parametrization_clean', 'parametrization_clean.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
