@@ -154,8 +154,8 @@ def test_genetic_neural_net_propagator_propagate_first(repository_mock, all_sett
     next_generation, best_master_parents = propagator.propagate_first(get_individuals, model)
     best_costs = [best_master_parents[0].cost, best_master_parents[1].cost]
     assert next_generation != get_individuals
-    assert pytest.approx(239.557, rel=1e-0) in best_costs
-    assert pytest.approx(871.989, rel=1e-0) in best_costs
+    assert pytest.approx(239.557, rel=1e-3) in best_costs
+    assert pytest.approx(871.989, rel=1e-3) in best_costs
 
 
 @pytest.mark.usefixtures('get_individuals')
