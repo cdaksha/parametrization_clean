@@ -1,5 +1,6 @@
 # ReaxFF Parametrization with Clean Architecture
 [![Build Status](https://travis-ci.com/cdaksha/parametrization_clean.svg?token=LpB61vRRhRXYf6MrmquF&branch=master)](https://travis-ci.com/cdaksha/parametrization_clean)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Contains Python files and Bash scripts for Parametrization project. Uses the genetic algorithm (GA) algorithm as well
 as an artificial neural network (ANN) to optimize a ReaxFF parameter set.
