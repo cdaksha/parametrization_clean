@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.cost.strategy import IErrorStrategy
+from domain.cost.strategy import IErrorStrategy
 
 
 class ReaxError(IErrorStrategy):

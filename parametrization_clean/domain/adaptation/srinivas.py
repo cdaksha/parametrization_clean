@@ -7,7 +7,7 @@ from typing import Tuple, List
 
 
 # Local source
-from parametrization_clean.domain.adaptation.strategy import IAdaptationStrategy
+from domain.adaptation.strategy import IAdaptationStrategy
 
 
 class SrinivasAdapt(IAdaptationStrategy):

@@ -9,10 +9,10 @@ from copy import deepcopy
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.root_individual import RootIndividual
-from parametrization_clean.domain.cost.strategy import IErrorStrategy
-from parametrization_clean.domain.cost.reax_error import ReaxError
-from parametrization_clean.domain.utils.helpers import set_param
+from domain.root_individual import RootIndividual
+from domain.cost.strategy import IErrorStrategy
+from domain.cost.reax_error import ReaxError
+from domain.utils.helpers import set_param
 
 
 class Individual(object):

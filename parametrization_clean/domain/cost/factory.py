@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.cost.reax_error import ReaxError
+from domain.cost.reax_error import ReaxError
 
 
 def error_calculator_factory(algorithm_name: str):

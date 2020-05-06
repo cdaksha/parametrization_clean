@@ -7,8 +7,8 @@
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.adaptation.srinivas import SrinivasAdapt
-from parametrization_clean.domain.adaptation.xiao import XiaoAdapt
+from domain.adaptation.srinivas import SrinivasAdapt
+from domain.adaptation.xiao import XiaoAdapt
 
 
 def adaptation_factory(algorithm_name: str):

@@ -8,9 +8,9 @@ import random
 
 
 # Local source
-from parametrization_clean.domain.crossover.strategy import ICrossoverStrategy
-from parametrization_clean.domain.individual import Individual
-from parametrization_clean.domain.root_individual import RootIndividual
+from domain.crossover.strategy import ICrossoverStrategy
+from domain.individual import Individual
+from domain.root_individual import RootIndividual
 
 
 class TwoPointCross(ICrossoverStrategy):

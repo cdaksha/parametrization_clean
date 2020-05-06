@@ -12,12 +12,12 @@ import json
 # 3rd party packages
 
 # Local source
-from parametrization_clean.infrastructure.config.default import DefaultSettings
-from parametrization_clean.domain.selection.factory import selection_factory
-from parametrization_clean.domain.adaptation.factory import adaptation_factory
-from parametrization_clean.domain.cost.factory import error_calculator_factory
-from parametrization_clean.domain.crossover.factory import crossover_factory
-from parametrization_clean.domain.mutation.factory import mutation_factory
+from infrastructure.config.default import DefaultSettings
+from domain.selection.factory import selection_factory
+from domain.adaptation.factory import adaptation_factory
+from domain.cost.factory import error_calculator_factory
+from domain.crossover.factory import crossover_factory
+from domain.mutation.factory import mutation_factory
 
 
 class UserSettings(DefaultSettings):

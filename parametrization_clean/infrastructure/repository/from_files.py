@@ -11,16 +11,15 @@ import shutil
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.individual import Individual
-from parametrization_clean.domain.root_individual import RootIndividual
-from parametrization_clean.domain.cost.reax_error import ReaxError
-from parametrization_clean.domain.utils.helpers import get_param
-from parametrization_clean.use_case.port.population_repository import IPopulationRepository
-from parametrization_clean.use_case.port.settings_repository import IAllSettings
-from parametrization_clean.infrastructure.utils.reax_reader import ReaxReader, write_ffield
-from parametrization_clean.infrastructure.utils.reax_converter import Fort99Extractor
-from parametrization_clean.infrastructure.utils.response_object import (ResponseSuccess,
-                                                                        ResponseWarning, ResponseFailure)
+from domain.individual import Individual
+from domain.root_individual import RootIndividual
+from domain.cost.reax_error import ReaxError
+from domain.utils.helpers import get_param
+from use_case.port.population_repository import IPopulationRepository
+from use_case.port.settings_repository import IAllSettings
+from infrastructure.utils.reax_reader import ReaxReader, write_ffield
+from infrastructure.utils.reax_converter import Fort99Extractor
+from infrastructure.utils.response_object import (ResponseSuccess, ResponseWarning, ResponseFailure)
 
 
 class PopulationFileRepository(IPopulationRepository):

@@ -8,11 +8,11 @@ import shutil
 import pytest
 
 # Local source
-from parametrization_clean.infrastructure.repository.from_files import PopulationFileRepository
-from parametrization_clean.domain.root_individual import RootIndividual
-from parametrization_clean.infrastructure.utils.response_object import (ResponseSuccess,
-                                                                        ResponseWarning,
-                                                                        ResponseFailure)
+from infrastructure.repository.from_files import PopulationFileRepository
+from domain.root_individual import RootIndividual
+from infrastructure.utils.response_object import (ResponseSuccess,
+                                                  ResponseWarning,
+                                                  ResponseFailure)
 from tests.use_case.test_population_propagator import all_settings
 from tests.infrastructure.utils.test_reaxff_reader import reax_io_obj
 

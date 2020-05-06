@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.selection.tournament import TournamentSelect
+from domain.selection.tournament import TournamentSelect
 
 
 def selection_factory(algorithm_name: str):

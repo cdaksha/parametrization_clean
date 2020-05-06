@@ -9,7 +9,7 @@ from typing import List, Tuple
 import pandas as pd
 
 # Local source
-from parametrization_clean.domain.individual import Individual
+from domain.individual import Individual
 
 
 def individuals_to_features_df(population: List[Individual]) -> pd.DataFrame:

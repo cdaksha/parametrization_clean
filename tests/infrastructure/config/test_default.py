@@ -4,13 +4,13 @@
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.selection.tournament import TournamentSelect
-from parametrization_clean.domain.mutation.gauss import GaussianMutate
-from parametrization_clean.domain.crossover.double_pareto import DoubleParetoCross
-from parametrization_clean.domain.adaptation.xiao import XiaoAdapt
-from parametrization_clean.domain.cost.reax_error import ReaxError
-from parametrization_clean.domain.mutation.nakata import NakataMutate
-from parametrization_clean.infrastructure.config.default import DefaultSettings
+from domain.selection.tournament import TournamentSelect
+from domain.mutation.gauss import GaussianMutate
+from domain.crossover.double_pareto import DoubleParetoCross
+from domain.adaptation.xiao import XiaoAdapt
+from domain.cost.reax_error import ReaxError
+from domain.mutation.nakata import NakataMutate
+from infrastructure.config.default import DefaultSettings
 
 
 def test_all_settings_init():

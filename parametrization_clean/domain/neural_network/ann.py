@@ -9,15 +9,15 @@ from typing import List
 import tensorflow as tf
 
 # Local source
-from parametrization_clean.domain.individual import Individual
-from parametrization_clean.domain.root_individual import RootIndividual
-from parametrization_clean.domain.cost.strategy import IErrorStrategy
-from parametrization_clean.domain.neural_network.extract_data import (individuals_to_features_df,
-                                                                      individuals_to_features_and_outputs_df,
-                                                                      extract_features_and_outputs_from_combined_df)
-from parametrization_clean.domain.neural_network.transform_data import (train_test_split, normalize_features,
-                                                                        get_columns_to_remove,
-                                                                        remove_problematic_columns)
+from domain.individual import Individual
+from domain.root_individual import RootIndividual
+from domain.cost.strategy import IErrorStrategy
+from domain.neural_network.extract_data import (individuals_to_features_df,
+                                                individuals_to_features_and_outputs_df,
+                                                extract_features_and_outputs_from_combined_df)
+from domain.neural_network.transform_data import (train_test_split, normalize_features,
+                                                  get_columns_to_remove,
+                                                  remove_problematic_columns)
 
 
 class FeedForwardNet:

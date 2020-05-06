@@ -8,8 +8,8 @@ import random
 
 
 # Local source
-from parametrization_clean.domain.selection.strategy import ISelectionStrategy
-from parametrization_clean.domain.individual import Individual
+from domain.selection.strategy import ISelectionStrategy
+from domain.individual import Individual
 
 
 class TournamentSelect(ISelectionStrategy):

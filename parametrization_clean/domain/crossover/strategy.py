@@ -14,8 +14,8 @@ from typing import Tuple
 
 
 # Local source
-from parametrization_clean.domain.individual import Individual
-from parametrization_clean.domain.root_individual import RootIndividual
+from domain.individual import Individual
+from domain.root_individual import RootIndividual
 
 
 class ICrossoverStrategy(metaclass=abc.ABCMeta):

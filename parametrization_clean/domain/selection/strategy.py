@@ -9,7 +9,7 @@ from typing import List
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.individual import Individual
+from domain.individual import Individual
 
 
 class ISelectionStrategy(metaclass=abc.ABCMeta):

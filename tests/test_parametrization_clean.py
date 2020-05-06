@@ -6,6 +6,7 @@ import os
 import shutil
 
 import pytest
+import click
 from click.testing import CliRunner
 
 from parametrization_clean.cli import main
@@ -31,7 +32,7 @@ def test_command_line_interface(training_set_dir_path, cli_output_path, reax_out
 
     help_result = runner.invoke(main, ['--help'])
     assert help_result.exit_code == 0
-    assert "Usage: main [OPTIONS]" in help_result.output
+    assert "Usage: cli [OPTIONS]" in help_result.output
     assert "Command-line interface for genetic algorithm + neural network generational\n  propagation" in help_result.output
     assert "-g, --generation_number" in help_result.output
     assert "-t, --training_path" in help_result.output
@@ -53,3 +54,6 @@ def test_command_line_interface(training_set_dir_path, cli_output_path, reax_out
 
     # Teardown
     shutil.rmtree(os.path.join(population_path, "generation-3"))
+
+    result = runner.invoke(main, '')
+    assert result.exception

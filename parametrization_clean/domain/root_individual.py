@@ -10,7 +10,7 @@ from typing import List, Dict
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.utils.helpers import get_param
+from domain.utils.helpers import get_param
 
 
 class Borg(object):

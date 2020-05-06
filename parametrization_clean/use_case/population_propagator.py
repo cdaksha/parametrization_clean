@@ -10,9 +10,9 @@ import statistics
 # 3rd party packages
 
 # Local source
-from parametrization_clean.domain.individual import Individual
-from parametrization_clean.use_case.port.settings_repository import IAllSettings
-from parametrization_clean.use_case.port.population_repository import IPopulationRepository
+from domain.individual import Individual
+from use_case.port.settings_repository import IAllSettings
+from use_case.port.population_repository import IPopulationRepository
 
 
 class PopulationPropagator:
