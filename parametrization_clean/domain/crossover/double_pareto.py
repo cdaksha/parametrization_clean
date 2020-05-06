@@ -9,12 +9,14 @@ import random
 # Local source
 from parametrization_clean.domain.crossover.strategy import ICrossoverStrategy
 from parametrization_clean.domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
 
 
 class DoubleParetoCross(ICrossoverStrategy):
 
     @staticmethod
-    def crossover(parent1: Individual, parent2: Individual, **kwargs) -> Tuple[Individual, Individual]:
+    def crossover(parent1: Individual, parent2: Individual, root_individual: RootIndividual,
+                  **kwargs) -> Tuple[Individual, Individual]:
         """Double Pareto crossover from Thakur's 2014 - "A new GA for global optimization of multimodal continuous
         functions."
         NOTE: Thakur is unclear about modified beta if/then command.
@@ -43,6 +45,6 @@ class DoubleParetoCross(ICrossoverStrategy):
             child1_params.append(child1_param)
             child2_params.append(child2_param)
 
-        child1 = Individual(child1_params)
-        child2 = Individual(child2_params)
+        child1 = Individual(child1_params, root_individual=root_individual)
+        child2 = Individual(child2_params, root_individual=root_individual)
         return child1, child2

@@ -1,0 +1,2 @@
+Generation Number, Best Total Error
+1,4094932.470

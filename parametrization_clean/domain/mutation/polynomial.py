@@ -9,12 +9,13 @@ import random
 # Local source
 from parametrization_clean.domain.mutation.strategy import IMutationStrategy
 from parametrization_clean.domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
 
 
 class PolynomialMutate(IMutationStrategy):
 
     @staticmethod
-    def mutation(parent: Individual, **kwargs) -> Individual:
+    def mutation(parent: Individual, root_individual: RootIndividual, **kwargs) -> Individual:
         """Polynomial mutation adapted from Deb and Agrawal's paper.
         ADAPTED TO FUNCTION WITHOUT UPPER/LOWER BOUNDS FOR PARAMETERS.
         """
@@ -30,4 +31,4 @@ class PolynomialMutate(IMutationStrategy):
                 delta_r = 1 - (2 * (1 - u)) ** poly_degree
                 param = param + delta_r * param
             new_params.append(param)
-        return Individual(new_params)
+        return Individual(new_params, root_individual=root_individual)

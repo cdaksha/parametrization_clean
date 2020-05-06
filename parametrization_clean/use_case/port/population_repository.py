@@ -31,8 +31,18 @@ class IPopulationRepository(metaclass=abc.ABCMeta):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def get_populations(self, lower_bound: int, upper_bound: int) -> List[Individual]:
-        """Get a population of Individuals from generations between generation numbers of
-        [lower_bound, upper_bound) (lower bound inclusive, upper bound exclusive).
+    def get_previous_n_populations(self, num_populations: int) -> List[Individual]:
+        """Read previous N populations relative to the current generation.
+        Precaution - ensure that lowest possible generation number is zero.
         """
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def write_individual(self, individual: Individual, **kwargs):
+        """Write an individual in the population to the repository."""
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def write_population(self, population: List[Individual], generation_number):
+        """Write a population of individuals to the repository."""
         raise NotImplementedError

@@ -11,17 +11,21 @@ from typing import List
 
 # Local source
 from parametrization_clean.domain.individual import Individual
-from parametrization_clean.domain.mutation.strategy import IMutationStrategy
 from parametrization_clean.use_case.port.population_repository import IPopulationRepository
+from parametrization_clean.use_case.port.settings_repository import IAllSettings
 
 
 class PopulationInitializer(object):
 
-    def __init__(self, repository: IPopulationRepository, initialization_strategy: IMutationStrategy):
-        self.repository = repository
-        self.strategy = initialization_strategy
+    def __init__(self, population_repository: IPopulationRepository, settings_repository: IAllSettings):
+        self.population_repository = population_repository
+        self.strategy = settings_repository.strategy_settings.initialization_strategy
+        self.population_size = settings_repository.ga_settings.population_size
+        self.mutation_settings_dict = vars(settings_repository.mutation_settings)
 
-    def execute(self, population_size, **kwargs) -> List[Individual]:
-        root_individual = self.repository.get_root_individual()
+    def execute(self) -> List[Individual]:
+        root_individual = self.population_repository.get_root_individual()
         individual = Individual.from_root_individual(root_individual)
-        return [self.strategy.mutation(individual, **kwargs) for _ in range(population_size)]
+        population = [self.strategy.mutation(individual, root_individual, **self.mutation_settings_dict)
+                      for _ in range(self.population_size)]
+        return population

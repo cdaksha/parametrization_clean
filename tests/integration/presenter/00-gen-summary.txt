@@ -1,0 +1,5 @@
+---------- GENERATION SUMMARY ----------
+Number of successful cases: 4.000 (80.00%)
+Number of failed cases: 1.000 (20.00%)
+Best Cost/Fitness Real ReaxFF Error (from Master GA): 4094932.470
+Corresponding best Master GA case: case-1

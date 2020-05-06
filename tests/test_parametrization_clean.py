@@ -2,36 +2,54 @@
 
 """Tests for `parametrization_clean` package."""
 
-import pytest
+import os
+import shutil
 
+import pytest
 from click.testing import CliRunner
 
-from parametrization_clean import parametrization_clean
-from parametrization_clean import cli
+from parametrization_clean.cli import main
 
 
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
-
-
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
-
-
-def test_command_line_interface():
+@pytest.mark.usefixtures("training_set_dir_path", "cli_output_path", "reax_output_dir_path")
+def test_command_line_interface(training_set_dir_path, cli_output_path, reax_output_dir_path):
     """Test the CLI."""
+    training_path = str(training_set_dir_path)
+    population_path = str(cli_output_path)
+    generation_number = 1
+
     runner = CliRunner()
-    result = runner.invoke(cli.main)
+    result = runner.invoke(main, '--generation_number {} --training_path="{}" --population_path="{}"'
+                           .format(generation_number, training_path, population_path))
+
     assert result.exit_code == 0
-    assert 'parametrization_clean.cli.main' in result.output
-    help_result = runner.invoke(cli.main, ['--help'])
+    assert "Generation Number: 1\n" in result.output
+    assert "Retrieving reference data from: {}".format(training_path) in result.output
+    assert "Outputting generational genetic algorithm data to: {}".format(population_path) in result.output
+    assert "{}: {}".format("SUCCESS", "Generation successfully written at {}".format(population_path)) in result.output
+    assert not result.exception
+
+    help_result = runner.invoke(main, ['--help'])
     assert help_result.exit_code == 0
-    assert '--help  Show this message and exit.' in help_result.output
+    assert "Usage: main [OPTIONS]" in help_result.output
+    assert "Command-line interface for genetic algorithm + neural network generational\n  propagation" in help_result.output
+    assert "-g, --generation_number" in help_result.output
+    assert "-t, --training_path" in help_result.output
+    assert "-p, --population_path" in help_result.output
+    assert not help_result.exception
+
+    # Teardown
+    shutil.rmtree(os.path.join(population_path, "generation-1"))
+
+    population_path = str(reax_output_dir_path)
+    result = runner.invoke(main, '--generation_number {} --training_path="{}" --population_path="{}"'
+                           .format(3, training_path, population_path))
+    assert result.exit_code == 0
+    assert "Generation Number: 3\n" in result.output
+    assert "Retrieving reference data from: {}".format(training_path) in result.output
+    assert "Outputting generational genetic algorithm data to: {}".format(population_path) in result.output
+    assert "{}: {}".format("SUCCESS", "Generation successfully written at {}".format(population_path)) in result.output
+    assert not result.exception
+
+    # Teardown
+    shutil.rmtree(os.path.join(population_path, "generation-3"))

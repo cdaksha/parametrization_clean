@@ -12,7 +12,7 @@ from copy import deepcopy
 from parametrization_clean.domain.root_individual import RootIndividual
 from parametrization_clean.domain.cost.strategy import IErrorStrategy
 from parametrization_clean.domain.cost.reax_error import ReaxError
-from parametrization_clean.domain.helpers import set_param
+from parametrization_clean.domain.utils.helpers import set_param
 
 
 class Individual(object):
@@ -21,6 +21,9 @@ class Individual(object):
                  root_individual: RootIndividual = None, error_calculator: IErrorStrategy = ReaxError):
         """Individual/Case in the Genetic Algorithm. Unique based on its own params and corresponding ffield.
         Used as a data storage object.
+        Anything requiring creation of updating parameters also requires updating the ffield dict.
+        The ffield dict is updated by using the reference/root ffield dict and setting the parameters at the given
+        parameter keys.
 
         :param params: List containing param values mapped from param_keys to ffield.
         :param reax_energies: List containing ReaxFF energies (output from fort.99).
@@ -30,9 +33,9 @@ class Individual(object):
         self.params = params
         self.reax_energies = reax_energies
 
-        self.ffield = self.update_ffield(root_individual) if root_individual else None
-        self.cost = self.total_error(root_individual, error_calculator) if root_individual else None
         self.error_calculator = error_calculator
+        self.ffield = self.update_ffield(root_individual) if root_individual else None
+        self.cost = self.total_error(root_individual) if root_individual and reax_energies else None
 
     def total_error(self, root_individual: RootIndividual) -> float:
         return sum(self.error_calculator.error(reax_val, dft_val, weight) for reax_val, dft_val, weight in
@@ -52,7 +55,7 @@ class Individual(object):
         """Constructor from RootIndividual.
         Same functionality as calling Individual(params=root_individual.params).
         """
-        return cls(params=root_individual.root_params)
+        return cls(params=root_individual.root_params, root_individual=root_individual)
 
     # For usage of min/max functions in determining best/worst individuals
     def __eq__(self, other):

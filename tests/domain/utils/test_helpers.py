@@ -6,7 +6,7 @@ from copy import deepcopy
 import pytest
 
 # Local source
-from parametrization_clean.domain.helpers import set_param, get_param
+from parametrization_clean.domain.utils.helpers import set_param, get_param
 
 
 @pytest.mark.usefixtures('get_individuals', 'root_ffield', 'param_keys')

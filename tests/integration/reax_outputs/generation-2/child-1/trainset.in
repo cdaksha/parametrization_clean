@@ -1,0 +1,497 @@
+CHARGE
+#Keyw Weighcpt Atom (a5,1x,fcc6.2,1x,i4)
+#ZnOH              0.10  1   0.340
+ZnOH2_opt         0.10  1   0.616
+#ZnOH3             0.10  1   0.664 
+#ZnOH4             0.10  1   0.638
+zno_w_hcp_opt     0.05  1   1.026 
+zno_w_hcp_opt     0.05  2   1.026
+zno_Z_fcc_opt     0.05  2   1.013
+zno_NaCl_opt      0.05  2   1.095 
+zno_CsCl_opt      0.05  2   0.978
+#charges for the 10-10 slab
+zno_w_10_10_surf     0.05    1  -0.909 
+zno_w_10_10_surf     0.05    2   0.946
+zno_w_10_10_surf     0.05    3  -1.009
+zno_w_10_10_surf     0.05    4   0.988
+zno_w_10_10_surf     0.05    5  -1.021
+zno_w_10_10_surf     0.05    6   1.007
+zno_w_10_10_surf     0.05    7  -1.025
+zno_w_10_10_surf     0.05    8   1.024
+zno_w_10_10_surf     0.05    9  -1.026
+zno_w_10_10_surf     0.05   10   1.026
+zno_w_10_10_surf     0.05   11  -1.026
+zno_w_10_10_surf     0.05   12   1.026
+zno_w_10_10_surf     0.05   13  -1.025
+zno_w_10_10_surf     0.05   14   1.024
+zno_w_10_10_surf     0.05   15  -1.021
+zno_w_10_10_surf     0.05   16   1.007
+zno_w_10_10_surf     0.05   17  -1.009
+zno_w_10_10_surf     0.05   18   0.988
+zno_w_10_10_surf     0.05   19  -0.909
+zno_w_10_10_surf     0.05   20   0.946
+#charges for the 11-20 slab
+zno_w_11_20_surf     0.05    1  -0.916   
+zno_w_11_20_surf     0.05    2  -0.916
+zno_w_11_20_surf     0.05    3   0.935
+zno_w_11_20_surf     0.05    4   0.935
+zno_w_11_20_surf     0.05    5  -1.018
+zno_w_11_20_surf     0.05    6  -1.018
+zno_w_11_20_surf     0.05    7   1.006
+zno_w_11_20_surf     0.05    8   1.006
+zno_w_11_20_surf     0.05    9  -1.025
+zno_w_11_20_surf     0.05   10  -1.025
+zno_w_11_20_surf     0.05   11   1.019
+zno_w_11_20_surf     0.05   12   1.019
+zno_w_11_20_surf     0.05   13  -1.026
+zno_w_11_20_surf     0.05   14  -1.026
+zno_w_11_20_surf     0.05   15   1.025
+zno_w_11_20_surf     0.05   16   1.025
+zno_w_11_20_surf     0.05   17  -1.026
+zno_w_11_20_surf     0.05   18  -1.026
+zno_w_11_20_surf     0.05   19   1.026
+zno_w_11_20_surf     0.05   20   1.026
+zno_w_11_20_surf     0.05   21  -1.026
+zno_w_11_20_surf     0.05   23   1.026
+zno_w_11_20_surf     0.05   24   1.026
+zno_w_11_20_surf     0.05   25  -1.026
+zno_w_11_20_surf     0.05   26  -1.026
+zno_w_11_20_surf     0.05   27   1.025
+zno_w_11_20_surf     0.05   28   1.025
+zno_w_11_20_surf     0.05   29  -1.025
+zno_w_11_20_surf     0.05   30  -1.025
+zno_w_11_20_surf     0.05   31   1.019
+zno_w_11_20_surf     0.05   32   1.019
+zno_w_11_20_surf     0.05   33  -1.018
+zno_w_11_20_surf     0.05   34  -1.018
+zno_w_11_20_surf     0.05   35   1.006
+zno_w_11_20_surf     0.05   36   1.006
+zno_w_11_20_surf     0.05   37  -0.916
+zno_w_11_20_surf     0.05   38  -0.916
+zno_w_11_20_surf     0.05   39   0.935
+zno_w_11_20_surf     0.05   40   0.935
+#charges for the Sphalerite surface
+zno_z_fcc_110_surf   0.05    1  -0.904   
+zno_z_fcc_110_surf   0.05    2   0.924
+zno_z_fcc_110_surf   0.05    3  -1.002
+zno_z_fcc_110_surf   0.05    4   0.987
+zno_z_fcc_110_surf   0.05    5  -1.012
+zno_z_fcc_110_surf   0.05    6   1.007
+zno_z_fcc_110_surf   0.05    7  -1.014
+zno_z_fcc_110_surf   0.05    8   1.014
+zno_z_fcc_110_surf   0.05    9  -1.014
+zno_z_fcc_110_surf   0.05   10   1.014
+zno_z_fcc_110_surf   0.05   11  -1.014
+zno_z_fcc_110_surf   0.05   12   1.014
+zno_z_fcc_110_surf   0.05   13  -1.014
+zno_z_fcc_110_surf   0.05   14   1.014
+zno_z_fcc_110_surf   0.05   15  -1.012
+zno_z_fcc_110_surf   0.05   16   1.007
+zno_z_fcc_110_surf   0.05   17  -1.002
+zno_z_fcc_110_surf   0.05   18   0.987
+zno_z_fcc_110_surf   0.05   19  -0.904
+zno_z_fcc_110_surf   0.05   20   0.924
+#charges for the 110 Rocksalt surface
+zno_NaCl_110_surf    0.05    1 -0.900    
+zno_NaCl_110_surf    0.05    2  0.940 
+zno_NaCl_110_surf    0.05    3 -1.078
+zno_NaCl_110_surf    0.05    4  1.023
+zno_NaCl_110_surf    0.05    5 -1.062
+zno_NaCl_110_surf    0.05    6  1.084
+zno_NaCl_110_surf    0.05    7 -1.083
+zno_NaCl_110_surf    0.05    8  1.074
+zno_NaCl_110_surf    0.05    9 -1.079
+zno_NaCl_110_surf    0.05   10  1.082
+zno_NaCl_110_surf    0.05   11 -1.079
+zno_NaCl_110_surf    0.05   12  1.082
+zno_NaCl_110_surf    0.05   13 -1.083
+zno_NaCl_110_surf    0.05   14  1.074
+zno_NaCl_110_surf    0.05   15 -1.062
+zno_NaCl_110_surf    0.05   16  1.084
+zno_NaCl_110_surf    0.05   17 -1.078
+zno_NaCl_110_surf    0.05   18  1.023
+zno_NaCl_110_surf    0.05   19 -0.900  
+zno_NaCl_110_surf    0.05   20  0.940 
+#charges for the 100 Rocksalt surface
+zno_NaCl_100_surf    0.05    1 -0.986 
+zno_NaCl_100_surf    0.05    2  1.007         
+zno_NaCl_100_surf    0.05    3 -1.083
+zno_NaCl_100_surf    0.05    4  1.060 
+zno_NaCl_100_surf    0.05    5 -1.084
+zno_NaCl_100_surf    0.05    6  1.086
+zno_NaCl_100_surf    0.05    7 -1.083
+zno_NaCl_100_surf    0.05    8  1.082
+zno_NaCl_100_surf    0.05    9 -1.083
+zno_NaCl_100_surf    0.02   10  1.083
+zno_NaCl_100_surf    0.05   11 -1.083
+zno_NaCl_100_surf    0.05   12  1.083
+zno_NaCl_100_surf    0.05   13 -1.083
+zno_NaCl_100_surf    0.05   14  1.082
+zno_NaCl_100_surf    0.05   15 -1.084
+zno_NaCl_100_surf    0.05   16  1.086
+zno_NaCl_100_surf    0.05   17 -1.083
+zno_NaCl_100_surf    0.05   18  1.060 
+zno_NaCl_100_surf    0.05   19 -0.986
+zno_NaCl_100_surf    0.05   20  1.007
+ENDCHARGE
+HEATFO
+#Keyw Weighcpt Lit# (a5,1x,fcc6.2,fcc10.4)
+ENDHEATFO
+GEOMETRY
+zno_w_10_10_surf    5.005  1   2   1.874
+zno_w_10_10_surf    5.005  2   3   1.933
+zno_w_10_10_surf    5.005  3   4   1.996
+zno_w_10_10_surf    5.005  3   6   2.058
+zno_w_10_10_surf    5.005  9  10   2.006
+zno_w_10_10_surf    5.005 10  11   1.991
+zno_w_10_10_surf    5.005 11  12   2.006
+zno_w_10_10_surf    5.000 1  2  3  115.444
+zno_w_10_10_surf    5.000 2  3  4  112.140
+zno_w_10_10_surf    5.000 2  3  6  102.030
+zno_w_10_10_surf    5.000 9 10 11  108.926
+zno_w_10_10_surf    5.000 10 11 12  108.100
+zno_w_11_20_surf    5.005  1  3     1.890
+zno_w_11_20_surf    5.005  1  4     1.903
+zno_w_11_20_surf    5.005  4  5     1.960
+zno_w_11_20_surf    5.005 17 19     2.006
+zno_w_11_20_surf    5.005 17 20     2.001
+zno_w_11_20_surf    5.005 20 21     1.998
+zno_w_11_20_surf    5.000 1 4 2   117.487
+zno_w_11_20_surf    5.000 1 4 5   114.353
+zno_w_11_20_surf    5.000 4 5 12  103.892
+zno_w_11_20_surf    5.000 17 20 18 108.543
+zno_w_11_20_surf    5.000 20 21 24 110.114
+zno_Z_fcc_110_surf  5.005  19 20  1.874
+zno_Z_fcc_110_surf  5.005  17 20  1.973
+zno_Z_fcc_110_surf  5.005  18 19  1.978
+zno_Z_fcc_110_surf  5.005  11 12  1.996
+zno_Z_fcc_110_surf  5.005   9 12  1.998
+zno_Z_fcc_110_surf  5.000  18 19 20 104.580
+zno_Z_fcc_110_surf  5.000  19 20 17 112.287
+zno_Z_fcc_110_surf  5.000  16 17 20 102.780
+zno_Z_fcc_110_surf  5.000  15 18 19 107.299
+zno_Z_fcc_110_surf  5.000  10 11 14 110.249
+zno_Z_fcc_110_surf  5.000   9 12 13 110.184
+zno_NaCl_110_surf   5.005  1   2  2.152
+zno_NaCl_110_surf   5.005  1   4  2.062
+zno_NaCl_110_surf   5.005  2   3  2.057
+zno_NaCl_110_surf   5.005 10  11  2.150
+#zno_NaCl_110_surf   2.000 2 1 4   88.494
+#zno_NaCl_110_surf   2.000 1 2 3   91.501
+#zno_NaCl_110_surf   2.000 2 3 6   89.041
+#zno_NaCl_110_surf   2.000 8 9 12  90.815
+#zno_NaCl_110_surf   2.000 10 9 12  89.598
+zno_NaCl_100_surf   5.005  1  4    2.202
+zno_NaCl_100_surf   5.005  2  3    2.150
+zno_NaCl_100_surf   5.005  9 12    2.178
+zno_NaCl_100_surf   5.005 11 12    2.150
+#zno_NaCl_100_surf   2.000  1 2 3  91.905
+#zno_NaCl_100_surf   2.000  2 1 4  88.095
+#zno_NaCl_100_surf   2.000  1 4 5  180.00
+#Keyw Weighcpt At1 At2 At3 At4 #Lit (a5,1x,fcc6.2,1x,4i4,fcc10.4)
+ENDGEOMETRY
+ENERGY
+#Weighcp op1 Key1  n1  op2 Key2  n2  op3 Key3  n3  op4 Key4  n4  op5 Key5  n5  #Lit (fcc6.2,5(1x,a1,3x,a5,1x,i3),fcc10.4)
+#23.56xaxxxaaaaax123xaxxxaaaaax123xaxxxaaaaax123xaxxxaaaaax123xaxxxaaaaax123 2345.7890
+# Volume Zn-bcc equation of state
+ 4.0   +     bcc1 /2   -     bcc_opt /2                                      41.6678
+ 2.0   +     bcc2 /2   -     bcc_opt /2                                      23.5926
+ 1.0   +     bcc3 /2   -     bcc_opt /2                                      12.4612
+ 1.0   +     bcc4 /2   -     bcc_opt /2                                       5.9732
+ 0.5   +     bcc5 /2   -     bcc_opt /2                                       2.2796
+ 0.50  +     bcc6 /2   -     bcc_opt /2                                       0.5417
+ 0.50  +     bcc7 /2   -     bcc_opt /2                                       0.1450
+ 0.50  +     bcc8 /2   -     bcc_opt /2                                       0.0303
+ 0.50  +     bcc9 /2   -     bcc_opt /2                                       0.0001
+ 0.50  +     bcc10/2   -     bcc_opt /2                                       0.0063
+ 0.50  +     bcc11/2   -     bcc_opt /2                                       0.0762
+ 0.5   +     bcc12/2   -     bcc_opt /2                                       0.3289
+ 0.5   +     bcc13/2   -     bcc_opt /2                                       1.1689
+# Volume Zn-fcc equation of state
+ 2.0   +     fcc1 /4   -     fcc_opt /4                                      40.0823
+ 0.5   +     fcc2 /4   -     fcc_opt /4                                      22.2867
+ 0.25  +     fcc3 /4   -     fcc_opt /4                                      11.9230  
+ 0.1   +     fcc4 /4   -     fcc_opt /4                                       5.6759
+ 0.05  +     fcc5 /4   -     fcc_opt /4                                       2.3212
+ 0.05  +     fcc6 /4   -     fcc_opt /4                                       0.3850
+ 0.01  +     fcc7 /4   -     fcc_opt /4                                       0.0645
+ 0.01  +     fcc8 /4   -     fcc_opt /4                                       0.0005
+ 0.01  +     fcc9 /4   -     fcc_opt /4                                       0.0001
+ 0.01  +     fcc10/4   -     fcc_opt /4                                       0.0296
+ 0.05  +     fcc11/4   -     fcc_opt /4                                       0.1213
+ 0.10  +     fcc12/4   -     fcc_opt /4                                       0.3856
+ 0.20  +     fcc13/4   -     fcc_opt /4                                       1.2957
+# Volume Zn-hcp equation of state #Zn-sc equation of state                                                 
+10.0   +     sc1  1    -     sc_opt  1                                       75.5816 
+ 8.0   +     sc2  1    -     sc_opt  1                                       48.4310
+ 4.0   +     sc3  1    -     sc_opt  1                                       30.7132
+ 2.0   +     sc4  1    -     sc_opt  1                                       18.7314
+ 1.0   +     sc5  1    -     sc_opt  1                                       11.0567
+ 1.0   +     sc6  1    -     sc_opt  1                                        5.9224
+ 1.0   +     sc7  1    -     sc_opt  1                                        2.8409
+ 1.0   +     sc8  1    -     sc_opt  1                                        1.0375
+ 1.0   +     sc9  1    -     sc_opt  1                                        0.1498 
+ 1.0   +     sc10 1    -     sc_opt  1                                        0.1090
+ 1.0   +     sc11  1   -     sc_opt  1                                        0.0001
+ 1.0   +     sc12  1   -     sc_opt  1                                        0.3085
+ 1.0   +     sc13  1   -     sc_opt  1                                        0.9442
+ 1.0   +     sc14  1   -     sc_opt  1                                        1.8389
+# General Zn-metal phase stabilities
+ 0.10  +     bcc_opt /2   -     fcc_opt/4                                     2.7100
+ 0.10  +     sc_opt /1    -     fcc_opt/4                                     6.0000
+#Zn-hcp cohesive energy 
+ 0.10  +     fcc_opt /4                                                     -31.1300
+# Volume ZnO_wurtzite equation of state
+ 0.10   +     zno_w_hcp_85_4/2     -    zno_w_hcp_opt/2                        7.4126 
+ 0.05   +     zno_w_hcp_90_0/2     -    zno_w_hcp_opt/2                        3.0754
+ 0.02   +     zno_w_hcp_95_1/2     -    zno_w_hcp_opt/2                        0.6895
+ 0.005  +     zno_w_hcp_97_5/2     -    zno_w_hcp_opt/2                        0.1916
+ 0.005  +     zno_w_hcp_100/2      -    zno_w_hcp_opt/2                        0.0001
+ 0.005  +     zno_w_hcp_102_5/2    -    zno_w_hcp_opt/2                        0.2488
+ 0.02   +     zno_w_hcp_105_0/2    -    zno_w_hcp_opt/2                        0.6315
+ 0.05   +     zno_w_hcp_110_2/2    -    zno_w_hcp_opt/2                        2.0611
+ 0.05   +     zno_w_hcp_115_7/2    -    zno_w_hcp_opt/2                        4.4584
+ 0.10   +     zno_w_hcp_120_1/2    -    zno_w_hcp_opt/2                        7.0492
+# Volume ZnO_zincblende equation of state                                        
+ 0.5   +     zno_Z_fcc_80_3/1     -    zno_Z_fcc_opt/1                       15.8678
+ 0.5   +     zno_Z_fcc_84_6/1     -    zno_Z_fcc_opt/1                        8.9764
+ 0.5   +     zno_Z_fcc_90_5/1     -    zno_Z_fcc_opt/1                        3.0230
+ 0.5   +     zno_Z_fcc_95_2/1     -    zno_Z_fcc_opt/1                        0.6847
+ 0.5   +     zno_Z_fcc_98_4/1     -    zno_Z_fcc_opt/1                        0.1276
+ 0.5   +     zno_Z_fcc_100/1      -    zno_Z_fcc_opt/1                        0.0001
+ 0.5   +     zno_Z_fcc_103_3/1    -    zno_Z_fcc_opt/1                        0.1669
+ 0.5   +     zno_Z_fcc_105_0/1    -    zno_Z_fcc_opt/1                        0.4821
+ 0.5   +     zno_Z_fcc_110_1/1    -    zno_Z_fcc_opt/1                        1.6814
+ 0.5   +     zno_Z_fcc_115_4/1    -    zno_Z_fcc_opt/1                        3.8342
+ 0.5   +     zno_Z_fcc_120_9/1    -    zno_Z_fcc_opt/1                        6.9078
+# Volume ZnO_NaCl equation of state                                              
+ 2.0   +     zno_NaCl_69_0/1      -    zno_NaCl_opt/1                        52.7522
+ 1.5   +     zno_NaCl_74_6/1      -    zno_NaCl_opt/1                        31.2838
+ 1.0   +     zno_NaCl_80_5/1      -    zno_NaCl_opt/1                        16.5036
+ 1.0   +     zno_NaCl_85_1/1      -    zno_NaCl_opt/1                         8.8790
+ 1.0   +     zno_NaCl_89_9/1      -    zno_NaCl_opt/1                         3.9300
+ 1.0   +     zno_NaCl_94_9/1      -    zno_NaCl_opt/1                         1.0832
+ 1.0   +     zno_NaCl_100/1       -    zno_NaCl_opt/1                         0.0001
+ 1.0   +     zno_NaCl_105_3/1     -    zno_NaCl_opt/1                         0.9300
+ 1.0   +     zno_NaCl_110_8/1     -    zno_NaCl_opt/1                         2.3917
+ 1.0    +     zno_NaCl_114_6/1     -    zno_NaCl_opt/1                         3.8619
+#12.5   +     zno_NaCl_120_4/1     -    zno_NaCl_opt/1                         7.0462
+# 5.0   +     zno_NaCl_134_8/1     -    zno_NaCl_opt/1                        17.2994
+# Volume ZnO_CsCl equation of state                                              
+10.0   +     zno_CsCl_61.5  /1    -    zno_CsCl_opt /1                      87.3107
+ 5.0   +     zno_CsCl_70_0/1      -    zno_CsCl_opt/1                        42.2685
+ 2.5   +     zno_CsCl_81_6/1      -    zno_CsCl_opt/1                        12.2061
+ 0.5   +     zno_CsCl_89_2/1      -    zno_CsCl_opt/1                         3.6823
+ 0.5   +     zno_CsCl_94_5/1      -    zno_CsCl_opt/1                         0.9035
+ 1.0   +     zno_CsCl_97_2/1      -    zno_CsCl_opt/1                         0.2648
+ 2.5   +     zno_CsCl_100/1       -    zno_CsCl_opt/1                         0.0001
+ 2.5   +     zno_CsCl_102_8/1     -    zno_CsCl_opt/1                         1.1909
+ 2.5   +     zno_CsCl_114_7/1     -    zno_CsCl_opt/1                         7.53  
+#25.0   +     zno_CsCl_120_9/1     -    zno_CsCl_opt/1                        11.04  
+#25.0   +     zno_CsCl_134_1/1     -    zno_CsCl_opt/1                        18.3761
+#25.0   +     zno_CsCl_144_6/1     -    zno_CsCl_opt/1                        26.3525
+## Experimental lattice energy. Chemical Principles, Masterton, CBS 1983
+# General Heatfo_ZnO DR 051228, Actually this is the heat of formation                                   
+ 0.50  +     zno_w_hcp_opt/2 - fcc_opt/4  - O2_min/2                        -83.1740    
+ 2.50  +     zno_Z_fcc_opt/1 - fcc_opt/4  - O2_min/2                        -82.6742    
+ 2.50  +     zno_NaCl_opt/1 - fcc_opt/4  - O2_min/2                        -74.6034
+ 2.50  +     zno_CsCl_opt/1 - fcc_opt/4  - O2_min/2                        -45.2844
+# General ZnO_phases stabilities                                                  
+ 0.25  +     zno_Z_fcc_opt/1   -     zno_w_hcp_opt/2                          0.4998    
+ 0.10  +     zno_NaCl_opt/1   -     zno_w_hcp_opt/2                           8.5706    
+ 1.0   +     zno_CsCl_opt/1   -     zno_w_hcp_opt/2                          37.8916    
+#ZnO cluster reaction energies                                          
+25.00 +   ZnOH/ 1       - OH/1                                              -39.4165    
+ 5.00 +   ZnOH2_opt/ 1  - ZnOH/ 1       - OH/1                              -93.0744    
+ 5.00 +   ZnOH3/1       - ZnOH2_opt/1   - OH/1                              -19.6213    
+ 5.00 +   ZnOH4/1       - ZnOH3/1       - OH/1                              -22.4927    
+# 1.00 +   ZnOH2_H2O/ 1  - ZnOH2/ 1      - H2O/1                            -14.6187    
+# 1.00 +   ZnOH2_2H2O/ 1 - ZnOH2_H2O/ 1  - H2O/1                            -11.5973    
+# 1.00 +   ZnOH2_3H2O/ 1 - ZnOH2_2H2O/ 1 - H2O/1                              4.1748    
+# 2.50 +   ZnOH2_4H2O/ 1 - ZnOH2_3H2O/ 1 - H2O/1                            -12.7433    
+# Restraint ho-Zn-oh_angle                                                 
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_175/1                                       -0.0088    
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_170/1                                       -0.0594    
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_165/1                                       -0.3583    
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_160/1                                       -0.9264    
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_155/1                                       -1.7758    
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_150/1                                       -2.9364    
+  1.00 +   ZnOH2_opt/1 -   ZnOH2_145/1                                       -4.4089    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_140/1                                       -6.1831    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_135/1                                       -8.2440    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_130/1                                      -10.5678    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_125/1                                      -13.1372    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_120/1                                      -15.9558    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_115/1                                      -19.0342    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_110/1                                      -22.3808    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_105/1                                      -26.0218    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_100/1                                      -30.0092    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_95 /1                                      -34.4110    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_90 /1                                      -39.3238    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_85 /1                                      -44.9112    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_80 /1                                      -51.4338    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_75 /1                                      -59.2761    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_70 /1                                      -69.0032    
+# Restraint Zn-OH_bond dissociation                                        
+#singlet states                                                         
+100.00 +   ZnOH2_opt/1 -   ZnOH2_1_10/1                                    -490.7903    
+ 75.00 +   ZnOH2_opt/1 -   ZnOH2_1_20/1                                    -276.1959    
+ 50.00 +   ZnOH2_opt/1 -   ZnOH2_1_30/1                                    -147.6731    
+ 25.00 +   ZnOH2_opt/1 -   ZnOH2_1_35/1                                    -105.2859    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_1_40/1                                     -73.4911    
+  7.50 +   ZnOH2_opt/1 -   ZnOH2_1_45/1                                     -49.8140    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_1_50/1                                     -32.2434    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_1_55/1                                     -19.5561    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_1_60/1                                     -10.7611    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_1_65/1                                      -5.0271    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_1_70/1                                      -1.6716    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_1_75/1                                      -0.1775    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_1_80/1                                      -0.1302    
+  3.00 +   ZnOH2_opt/1 -   ZnOH2_1_85/1                                      -1.1725    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_1_90/1                                      -3.0291    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_1_95/1                                      -5.5047    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_00/1                                      -8.4464    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_05/1                                     -11.7264    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_10/1                                     -15.2453    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_15/1                                     -18.9282    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_20/1                                     -22.7155    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_25/1                                     -26.5580    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_30/1                                     -30.4146    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_35/1                                     -34.2529    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_40/1                                     -38.0475    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_45/1                                     -41.7783    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_50/1                                     -45.4354    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_60/1                                     -52.4404    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_70/1                                     -59.0224    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_80/1                                     -65.1514    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_2_90/1                                     -70.8218    
+ 10.00 +   ZnOH2_opt/1 -   ZnOH2_3_00/1                                     -76.0416    
+#triplet states                                                         
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_5_00/1                                     -92.7682    
+  5.00 +   ZnOH2_opt/1 -   ZnOH2_5_50/1                                     -92.8698    
+  2.00 +   ZnOH2_opt/1 -   ZnOH2_6_00/1                                     -92.9044    
+# Test for EEM parameters                                               
+  0.50 +   ZnOH2_25_0/1 -   ZnOH/1 - OH/1                                    -0.0010    
+# Zn-O-H_angle
+  1.00 +   ZnOH/1 -   ZnOH_90/1                                               -8.4405    
+  1.00 +   ZnOH/1 -   ZnOH_100/1                                              -3.3630    
+  1.00 +   ZnOH/1 -   ZnOH_110/1                                              -0.6350    
+  1.00 +   ZnOH/1 -   ZnOH_120/1                                              -0.0536    
+  1.00 +   ZnOH/1 -   ZnOH_130/1                                              -1.3225    
+  1.00 +   ZnOH/1 -   ZnOH_140/1                                              -4.0651    
+  1.00 +   ZnOH/1 -   ZnOH_150/1                                              -7.8584    
+  1.00 +   ZnOH/1 -   ZnOH_160/1                                             -12.2188    
+  1.00 +   ZnOH/1 -   ZnOH_170/1                                             -16.5287
+#Surface energies
+##Gives 2.00J/m² surface energy
+ 0.10  +     zno_NaCl_110_surf/10    - zno_NaCl_opt/1                      7.53885
+##Gives 1.16J/m² surface energy
+ 0.10  +     zno_NaCl_100_surf/10    - zno_NaCl_opt/1                      3.09119
+##Gives 1.30J/m² surface energy
+ 0.10  +     zno_Z_fcc_110_surf/10   - zno_Z_fcc_opt/1                     5.57888
+##Gives 1.32J/m² surface energy
+ 0.10   +     zno_w_10_10_surf/10     - zno_w_hcp_opt/2                     6.56419
+##Gives 1.39J/m² surface energy 
+ 0.10   +     zno_w_11_20_surf/20     - zno_w_hcp_opt/2                     5.99191
+# Restraint Zn-O-Zn_angle data
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_90 /1                     -12.1446745 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_95 /1                      -8.8685478 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_100/1                      -6.3506848 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_105/1                      -4.4413742 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_110/1                      -2.9975564 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_115/1                      -1.6559787 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_120/1                      -0.9300067 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_125/1                      -0.4407187 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_130/1                      -0.1416979 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_135/1                       0.0020645  
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_140/1                      -0.1633909 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_145/1                      -0.2117280 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_150/1                      -0.2816451 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_155/1                      -0.2682478 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_160/1                      -0.4147399 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_165/1                      -0.6502128 
+  1.00 +  HO_Zn_O_Zn_OH_opt/1 - HO_Zn_O_Zn_OH_170/1                      -0.5999744 
+#test for 6-coordinated cubic and 8-coordinated cubic phases
+ 10.00 +     zno_CsCl_89_2/1      - zno_NaCl_85_1/1                         23.1243
+#test for 4-coordinated cubic and 6-coordinated cubic phases
+ 10.00 +     zno_Z_fcc_80_3/1     -  zno_NaCl_opt/1                          7.7970
+#wurtzite/zincblende comparisons
+ 0.2   +     zno_w_hcp_85_4/2     -    zno_Z_fcc_84_6/1                      -2.0000 
+ 0.10  +     zno_w_hcp_90_0/2     -    zno_Z_fcc_90_5/1                      -0.5000 
+ 0.10  +     zno_w_hcp_95_1/2     -    zno_Z_fcc_95_2/1                      -0.5000 
+# Restraint H-O-Zn_angle in Zn(OH)2
+  2.00 +   HOZnO_H_60 /1 - ZnOH2_opt/1                      32.3592781 
+  2.00 +   HOZnO_H_65 /1 - ZnOH2_opt/1                      26.1042634 
+  2.00 +   HOZnO_H_70 /1 - ZnOH2_opt/1                      20.6779880 
+  2.00 +   HOZnO_H_75 /1 - ZnOH2_opt/1                      15.7540904 
+  2.00 +   HOZnO_H_80 /1 - ZnOH2_opt/1                      11.8105195 
+  2.00 +   HOZnO_H_85 /1 - ZnOH2_opt/1                       8.5357607 
+  2.00 +   HOZnO_H_90 /1 - ZnOH2_opt/1                       5.8738152 
+  2.00 +   HOZnO_H_95 /1 - ZnOH2_opt/1                       3.7695562 
+  2.00 +   HOZnO_H_100/1 - ZnOH2_opt/1                       2.1788950 
+  2.00 +   HOZnO_H_105/1 - ZnOH2_opt/1                       1.0557973 
+  2.00 +   HOZnO_H_110/1 - ZnOH2_opt/1                       0.3515245 
+  2.00 +   HOZnO_H_115/1 - ZnOH2_opt/1                       0.0201870 
+  0.25 +   HOZnO_H_120/1 - ZnOH2_opt/1                       0.0150038 
+  2.00 +   HOZnO_H_125/1 - ZnOH2_opt/1                       0.2861255 
+  2.00 +   HOZnO_H_130/1 - ZnOH2_opt/1                       0.7845563 
+  2.00 +   HOZnO_H_135/1 - ZnOH2_opt/1                       1.4588717 
+  2.00 +   HOZnO_H_140/1 - ZnOH2_opt/1                       2.2556143 
+  2.00 +   HOZnO_H_145/1 - ZnOH2_opt/1                       3.1209436 
+  2.00 +   HOZnO_H_150/1 - ZnOH2_opt/1                       4.0073384 
+  0.25 +   HOZnO_H_155/1 - ZnOH2_opt/1                       4.8470152 
+  0.25 +   HOZnO_H_170/1 - ZnOH2_opt/1                       6.7119169 
+#surface relaxation
+  0.05 +   zno_NaCl_100_surf_r/1 - zno_NaCl_100_surfr2/1        -1.0000
+  0.10 +   zno_NaCl_100_surf_r/1 - zno_NaCl_100_surf/1           0.0100
+#General Water_ZnOsurface
+ 0.50   +    water_zno_a/1    -    water_zno_diss/1             -10.3293
+ 0.50   +    water_zno_b/1    -    water_zno_diss/1             -11.9034
+ 0.50   +    water_zno_c/1    -    water_zno_diss/1             -10.9285
+ 0.50   +    water_zno_d/1    -    water_zno_diss/1             -14.5583
+ 0.50   +    water_zno_e/1    -    water_zno_diss/1             -17.5194
+ 0.50   +    water_zno_f/1    -    water_zno_diss/1             -17.3603
+ 0.50   +    water_zno_g/1    -    water_zno_diss/1             -9.87906
+ 5.50   +    water_zno_h/1    -    water_zno_diss/1             -15.0852
+ 0.50   +    water_zno_i/1    -    water_zno_diss/1             -20.6081
+# Restraint Water_dissociation_path_1x1 to d1x1 coverage
+ 0.10  +    h2odiss1 /1    -    h2odiss0  /1                    0.495
+ 0.50  +    h2odiss2 /1    -    h2odiss0  /1                    1.522
+ 0.50  +    h2odiss3 /1    -    h2odiss0  /1                    2.443
+ 0.50  +    h2odiss4 /1    -    h2odiss0  /1                    3.182
+ 0.50  +    h2odiss5 /1    -    h2odiss0  /1                    3.526
+ 0.50  +    h2odiss6 /1    -    h2odiss0  /1                    3.491
+ 0.50  +    h2odiss7 /1    -    h2odiss0  /1                    3.141
+ 0.50  +    h2odiss8 /1    -    h2odiss0  /1                    2.587
+ 0.50  +    h2odiss9 /1    -    h2odiss0  /1                    2.117
+ 0.10  +    h2odiss10/1    -    h2odiss0  /1                    1.877
+# Restraint Water_dissociation_hd2x1_1
+ 0.50  +    2x1step0_r  /1   -    2x1step0   /1                 0.001  
+ 0.50  +    2x1step1    /1   -    2x1step0   /1                 1.450  
+ 0.50  +    2x1step2    /1   -    2x1step0   /1                 2.593  
+ 0.50  +    2x1step3    /1   -    2x1step0   /1                 3.758  
+ 0.50  +    2x1step4    /1   -    2x1step0   /1                 4.291  
+ 0.50  +    2x1step5    /1   -    2x1step0   /1                 3.937  
+ 0.50  +    2x1step6    /1   -    2x1step0   /1                 2.894  
+ 0.50  +    2x1step7    /1   -    2x1step0   /1                 0.901  
+ 0.50  +    2x1step8    /1   -    2x1step0   /1                -0.987  
+ 0.50  +    2x1step9    /1   -    2x1step0   /1                -2.532  
+ 0.10  +    2x1step10 /1   -    2x1step0   /1                -3.209  
+# Restraint Water_dissociation_hd2x1_2
+50.00  +    2x1step10 /1   -    2x1step0   /1                  -3.209  
+ 0.50  +    2x1step11   /1   -    2x1step0   /1                -2.382  
+ 0.50  +    2x1step12   /1   -    2x1step0   /1                -0.542  
+ 0.50  +    2x1step13   /1   -    2x1step0   /1                 1.697  
+ 0.50  +    2x1step14   /1   -    2x1step0   /1                 3.674  
+ 0.50  +    2x1step15   /1   -    2x1step0   /1                 4.972  
+ 0.50  +    2x1step16   /1   -    2x1step0   /1                 5.662  
+ 0.50  +    2x1step17   /1   -    2x1step0   /1                 5.553  
+ 0.50  +    2x1step18   /1   -    2x1step0   /1                 4.838  
+ 0.50  +    2x1step19   /1   -    2x1step0   /1                 3.917  
+ 0.10  +    2x1step20   /1   -    2x1step0   /1                 3.481  
+#
+ 2.00  +    2x1step10  /1   -    2x1step10_r /1                -0.0010
+ 2.00  +    h2odiss0_test1 /1 -  h2odiss0_test2/1               0.1
+# 
+ 0.25   +    water_zno_g/1    -    water_zno_gII/1             -3.00000
+ENDENERGY

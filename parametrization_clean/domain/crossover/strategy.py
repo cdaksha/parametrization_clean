@@ -15,11 +15,13 @@ from typing import Tuple
 
 # Local source
 from parametrization_clean.domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
 
 
 class ICrossoverStrategy(metaclass=abc.ABCMeta):
 
     @staticmethod
     @abc.abstractmethod
-    def crossover(parent1: Individual, parent2: Individual, **kwargs) -> Tuple[Individual, Individual]:
+    def crossover(parent1: Individual, parent2: Individual, root_individual: RootIndividual,
+                  **kwargs) -> Tuple[Individual, Individual]:
         raise NotImplementedError

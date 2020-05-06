@@ -1,0 +1,32 @@
+{
+    "strategy_settings": {
+        "crossover": "single_point",
+        "initialization": "central_uniform"
+    },
+    "ga_settings": {
+        "population_size": 50,
+        "use_elitism": false,
+        "use_adaptation": true
+    },
+    "mutation_settings": {
+        "gauss_std": [0.01, 0.1, 1.0],
+        "gauss_frac": [0.25, 0.5, 0.25]
+    },
+    "crossover_settings": {
+        "dpx_beta": 100
+    },
+    "selection_settings": {
+        "tournament_size": 3
+    },
+    "adaptation_settings": {
+        "srinivas_default_mutation_rate": 0.05,
+        "xiao_min_crossover_rate": 0.4,
+        "xiao_min_mutation_rate": 0.1,
+        "xiao_scale": 4
+    },
+    "neural_net_settings": {
+        "verbosity": 0,
+        "num_populations_to_train_on": 10,
+        "num_nested_ga_iterations": 100
+    }
+}

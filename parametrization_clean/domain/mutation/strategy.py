@@ -14,11 +14,12 @@ import abc
 
 # Local source
 from parametrization_clean.domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
 
 
 class IMutationStrategy(metaclass=abc.ABCMeta):
 
     @staticmethod
     @abc.abstractmethod
-    def mutation(parent: Individual, **kwargs) -> Individual:
+    def mutation(parent: Individual, root_individual: RootIndividual, **kwargs) -> Individual:
         raise NotImplementedError

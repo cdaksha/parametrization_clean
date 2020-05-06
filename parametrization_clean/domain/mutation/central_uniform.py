@@ -9,12 +9,13 @@ import random
 # Local source
 from parametrization_clean.domain.mutation.strategy import IMutationStrategy
 from parametrization_clean.domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
 
 
 class CentralUniformMutate(IMutationStrategy):
 
     @staticmethod
-    def mutation(parent: Individual, **kwargs) -> Individual:
+    def mutation(parent: Individual, root_individual: RootIndividual, **kwargs) -> Individual:
         """Inspired by Monte Carlo/GA guidelines for ReaxFF paper.
         Use a random number (determined by uniform distribution) in the central segment for each parameter range.
         So, if a parameter has a range of [p_min, p_max], a uniform random number will be generated in the bounds
@@ -27,4 +28,4 @@ class CentralUniformMutate(IMutationStrategy):
             delta = (upper_bound - lower_bound) / 4
             new_param = random.uniform(lower_bound + delta, upper_bound - delta)
             new_params.append(new_param)
-        return Individual(new_params)
+        return Individual(new_params, root_individual=root_individual)

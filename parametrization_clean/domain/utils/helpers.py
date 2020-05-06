@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Module with class to structure/maintain genetic_algorithm population's "individual"/child."""
+"""Module with helper methods for ffield dict."""
 
 # Standard library
 from typing import List, Dict

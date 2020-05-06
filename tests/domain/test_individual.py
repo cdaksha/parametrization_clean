@@ -81,7 +81,7 @@ def test_individual_from_root_individual(root_individual):
     assert isinstance(individual_from_root, Individual)
     assert individual_from_root.params == root_individual.root_params
     assert individual_from_root.reax_energies is None
-    assert individual_from_root.ffield is None
+    assert individual_from_root.ffield is not None
     assert individual_from_root.cost is None
 
 
