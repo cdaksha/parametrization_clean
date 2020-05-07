@@ -4,7 +4,7 @@
 as well as which code files to include.
 """
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", 'r') as readme_file:
     readme = readme_file.read()
@@ -39,11 +39,11 @@ setup(
     include_package_data=True,
     keywords='parametrization_clean',
     name='parametrization_clean-cdaksha',
-    packages=['parametrization_clean'],
+    packages=find_packages(include=['parametrization_clean', 'parametrization_clean.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/cdaksha/parametrization_clean',
-    version='1.0.0.4',
+    version='1.0.0.6',
     zip_safe=False,
 )
