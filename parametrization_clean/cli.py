@@ -9,7 +9,7 @@ import click
 # 3rd party packages
 
 # Local source
-from application.app import run_application
+from app import run_application
 
 
 @click.command('cli', short_help="Run one generation of GA.")
