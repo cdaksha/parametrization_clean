@@ -44,7 +44,7 @@ release = parametrization_clean.__version__
 extensions = ['sphinx.ext.autodoc', 
 'sphinx.ext.viewcode',
 'sphinx.ext.napoleon',
-'recommonmark']
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

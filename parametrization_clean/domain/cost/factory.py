@@ -7,12 +7,24 @@
 # 3rd party packages
 
 # Local source
-from domain.cost.reax_error import ReaxError
+from domain.cost.strategy import IErrorStrategy
 
 
-def error_calculator_factory(algorithm_name: str):
-    """Factory to select cost/error calculator type."""
-    error_calculator_types = {
-        'reax_error': ReaxError,
-    }
-    return error_calculator_types[algorithm_name]
+class ErrorFactory:
+    """Factory class for creating cost/error calculator algorithm executor."""
+
+    # Internal registry for available crossover methods
+    registry = {}
+
+    @classmethod
+    def register(cls, algorithm_name: str):
+        def inner_wrapper(wrapped_class: IErrorStrategy):
+            # Register algorithm only if it doesn't already exist in the registry
+            if algorithm_name not in cls.registry:
+                cls.registry[algorithm_name] = wrapped_class
+            return wrapped_class
+        return inner_wrapper
+
+    @classmethod
+    def create_executor(cls, algorithm_name: str) -> IErrorStrategy:
+        return cls.registry[algorithm_name]

@@ -7,18 +7,24 @@
 # 3rd party packages
 
 # Local source
-from domain.crossover.single_point import SinglePointCross
-from domain.crossover.two_point import TwoPointCross
-from domain.crossover.uniform import UniformCross
-from domain.crossover.double_pareto import DoubleParetoCross
+from domain.crossover.strategy import ICrossoverStrategy
 
 
-def crossover_factory(algorithm_name: str):
-    """Factory to select crossover type."""
-    crossover_types = {
-        'single_point': SinglePointCross,
-        'two_point': TwoPointCross,
-        'uniform': UniformCross,
-        'double_pareto': DoubleParetoCross
-    }
-    return crossover_types[algorithm_name]
+class CrossoverFactory:
+    """Factory class for creating crossover algorithm executor."""
+
+    # Internal registry for available crossover methods
+    registry = {}
+
+    @classmethod
+    def register(cls, algorithm_name: str):
+        def inner_wrapper(wrapped_class: ICrossoverStrategy):
+            # Register algorithm only if it doesn't already exist in the registry
+            if algorithm_name not in cls.registry:
+                cls.registry[algorithm_name] = wrapped_class
+            return wrapped_class
+        return inner_wrapper
+
+    @classmethod
+    def create_executor(cls, algorithm_name: str) -> ICrossoverStrategy:
+        return cls.registry[algorithm_name]

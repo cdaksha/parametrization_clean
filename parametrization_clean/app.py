@@ -17,8 +17,8 @@ from infrastructure.repository.from_files import PopulationFileRepository
 from infrastructure.presenter.file_writer import DataWriter
 
 
-def run_application(generation_number, training_path, population_path):
-    user_settings = UserSettings()
+def run_application(generation_number, training_path, population_path, config_path):
+    user_settings = UserSettings(config_path)
     population_repository = PopulationFileRepository(training_path, population_path,
                                                      user_settings, generation_number)
     population_writer = PopulationWriter(population_repository)

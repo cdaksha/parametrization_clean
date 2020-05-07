@@ -9,9 +9,11 @@ import random
 
 # Local source
 from domain.selection.strategy import ISelectionStrategy
+from domain.selection.factory import SelectionFactory
 from domain.individual import Individual
 
 
+@SelectionFactory.register('tournament')
 class TournamentSelect(ISelectionStrategy):
 
     @staticmethod

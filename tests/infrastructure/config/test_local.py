@@ -16,10 +16,13 @@ from domain.mutation.central_uniform import CentralUniformMutate
 from infrastructure.config.local import UserSettings
 
 
+PROJECT_ROOT = os.path.abspath(os.path.join(__file__, "../../../../"))
+
+
 def test_user_settings_init_with_empty_file():
-    UserSettings.USER_CONFIG_FILE = os.path.join(UserSettings.PROJECT_ROOT, "tests", "integration",
-                                                 "config", "empty_config.json")
-    user_settings = UserSettings()
+    config_file_path = os.path.join(PROJECT_ROOT, "tests", "integration",
+                                    "config", "empty_config.json")
+    user_settings = UserSettings(config_file_path)
 
     assert user_settings.strategy_settings.selection_strategy == TournamentSelect
     assert user_settings.strategy_settings.error_strategy == ReaxError
@@ -64,9 +67,9 @@ def test_user_settings_init_with_empty_file():
 
 
 def test_user_settings_init_with_nonexistent_file():
-    UserSettings.USER_CONFIG_FILE = os.path.join(UserSettings.PROJECT_ROOT, "tests", "integration",
-                                                 "config", "nonexistent_config.json")
-    user_settings = UserSettings()
+    config_file_path = os.path.join(PROJECT_ROOT, "tests", "integration",
+                                    "config", "nonexistent_config.json")
+    user_settings = UserSettings(config_file_path)
 
     assert user_settings.strategy_settings.selection_strategy == TournamentSelect
     assert user_settings.strategy_settings.error_strategy == ReaxError
@@ -111,9 +114,9 @@ def test_user_settings_init_with_nonexistent_file():
 
 
 def test_user_settings_init_with_some_parameters_specified():
-    UserSettings.USER_CONFIG_FILE = os.path.join(UserSettings.PROJECT_ROOT, "tests", "integration",
-                                                 "config", "config.json")
-    user_settings = UserSettings()
+    config_file_path = os.path.join(PROJECT_ROOT, "tests", "integration",
+                                    "config", "config.json")
+    user_settings = UserSettings(config_file_path)
 
     assert user_settings.strategy_settings.selection_strategy == TournamentSelect
     assert user_settings.strategy_settings.error_strategy == ReaxError
@@ -122,7 +125,7 @@ def test_user_settings_init_with_some_parameters_specified():
     assert user_settings.strategy_settings.mutation_strategy == GaussianMutate
     assert user_settings.strategy_settings.initialization_strategy == CentralUniformMutate
 
-    assert user_settings.ga_settings.population_size == 50
+    assert user_settings.ga_settings.population_size == 10
     assert user_settings.ga_settings.mutation_rate == 0.2
     assert user_settings.ga_settings.crossover_rate == 0.8
     assert not user_settings.ga_settings.use_elitism

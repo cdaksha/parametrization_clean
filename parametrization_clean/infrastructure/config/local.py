@@ -13,23 +13,21 @@ import json
 
 # Local source
 from infrastructure.config.default import DefaultSettings
-from domain.selection.factory import selection_factory
-from domain.adaptation.factory import adaptation_factory
-from domain.cost.factory import error_calculator_factory
-from domain.crossover.factory import crossover_factory
-from domain.mutation.factory import mutation_factory
+from domain.selection.factory import SelectionFactory
+from domain.adaptation.factory import AdaptationFactory
+from domain.cost.factory import ErrorFactory
+from domain.crossover.factory import CrossoverFactory
+from domain.mutation.factory import MutationFactory
 
 
+# TODO: Need a way to set param bounds, which is required for central uniform mutation
 class UserSettings(DefaultSettings):
 
-    PROJECT_ROOT = os.path.abspath(os.path.join(__file__, "../../../../"))
-    USER_CONFIG_FILE = os.path.join(PROJECT_ROOT, "config.json")
-
-    def __init__(self):
+    def __init__(self, user_config_file_path):
         super().__init__()
 
         try:
-            with open(self.USER_CONFIG_FILE, 'r') as in_file:
+            with open(user_config_file_path, 'r') as in_file:
                 all_settings_dict = json.load(in_file)
             self.build_from(all_settings_dict)
         except (FileNotFoundError, json.JSONDecodeError):
@@ -49,13 +47,13 @@ class UserSettings(DefaultSettings):
     def set_strategy_settings(self, strategy_settings_dict):
         for key, value in strategy_settings_dict.items():
             if key == "initialization":  # initialization and mutation share same factory
-                factory_name = "mutation_factory"
+                factory_name = "MutationFactory"
             else:
-                factory_name = key + "_factory"
+                factory_name = key.capitalize() + "Factory"
 
             attribute_name = "_" + key + "_strategy"
-            factory_to_call = getattr(sys.modules[__name__], factory_name)
-            setattr(self._strategy_settings, attribute_name, factory_to_call(value))
+            factory = getattr(sys.modules[__name__], factory_name)
+            setattr(self._strategy_settings, attribute_name, factory.create_executor(value))
 
     def set_ga_settings(self, ga_settings_dict):
         self.set_attributes_from_json(self._ga_settings, ga_settings_dict)

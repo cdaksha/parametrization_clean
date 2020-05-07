@@ -7,12 +7,24 @@
 # 3rd party packages
 
 # Local source
-from domain.selection.tournament import TournamentSelect
+from domain.selection.strategy import ISelectionStrategy
 
 
-def selection_factory(algorithm_name: str):
-    """Factory to select selection type."""
-    selection_types = {
-        'tournament': TournamentSelect
-    }
-    return selection_types[algorithm_name]
+class SelectionFactory:
+    """Factory class for creating selection algorithm executor."""
+
+    # Internal registry for available crossover methods
+    registry = {}
+
+    @classmethod
+    def register(cls, algorithm_name: str):
+        def inner_wrapper(wrapped_class: ISelectionStrategy):
+            # Register algorithm only if it doesn't already exist in the registry
+            if algorithm_name not in cls.registry:
+                cls.registry[algorithm_name] = wrapped_class
+            return wrapped_class
+        return inner_wrapper
+
+    @classmethod
+    def create_executor(cls, algorithm_name: str) -> ISelectionStrategy:
+        return cls.registry[algorithm_name]

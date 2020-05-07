@@ -13,27 +13,25 @@ from app import run_application
 
 
 @click.command('cli', short_help="Run one generation of GA.")
-@click.option('-g', '--generation_number', default=1, show_default=True, type=click.IntRange(min=1),
+@click.option('-g', '--generation_number', default=1, show_default=True, type=click.IntRange(min=1), required=True,
               help="Generation number for the genetic algorithm. Default = 1 = first generation.")
-@click.option('-t', '--training_path', type=click.Path(), help="File path with reference/training set files.")
-@click.option('-p', '--population_path', type=click.Path(), help="File path for generational genetic algorithm output.")
-def main(generation_number, training_path, population_path):
+@click.option('-t', '--training_path', type=click.Path(), required=True,
+              help="File path with reference/training set files.")
+@click.option('-p', '--population_path', type=click.Path(), required=True,
+              help="File path for generational genetic algorithm output.")
+@click.option('-c', '--config_path', type=click.Path(),
+              help="File path with location of (optional) user configuration file.")
+def main(generation_number, training_path, population_path, config_path):
     """Command-line interface for genetic algorithm + neural network generational propagation.
     Runs one generation of the GA.
     """
     # TODO: Make population size a command line option instead of a user configuration file option?
     click.echo("Generation Number: {}".format(generation_number))
     click.echo("Retrieving reference data from: {}".format(training_path))
+    click.echo("Retrieving user configuration from: {}".format(config_path))
     click.echo("Outputting generational genetic algorithm data to: {}".format(population_path))
-    try:
-        response = run_application(generation_number, training_path, population_path)
-    except TypeError:
-        arguments = [generation_number, training_path, population_path]
-        num_expected_arguments = len(arguments)
-        num_valid_arguments = sum(1 for arg in arguments if arg)
-        raise click.UsageError("Invalid number of arguments passed. Expected {} but received {}. "
-                               .format(num_expected_arguments, num_valid_arguments)
-                               + 'Try "cli.py --help" for help.')
+
+    response = run_application(generation_number, training_path, population_path, config_path)
 
     click.echo("{}: {}".format(response.type, response.message))
     return response.status_code

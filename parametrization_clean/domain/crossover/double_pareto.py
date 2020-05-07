@@ -8,10 +8,12 @@ import random
 
 # Local source
 from domain.crossover.strategy import ICrossoverStrategy
+from domain.crossover.factory import CrossoverFactory
 from domain.individual import Individual
 from domain.root_individual import RootIndividual
 
 
+@CrossoverFactory.register('double_pareto')
 class DoubleParetoCross(ICrossoverStrategy):
 
     @staticmethod

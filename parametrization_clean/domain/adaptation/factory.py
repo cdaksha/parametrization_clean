@@ -7,14 +7,24 @@
 # 3rd party packages
 
 # Local source
-from domain.adaptation.srinivas import SrinivasAdapt
-from domain.adaptation.xiao import XiaoAdapt
+from domain.adaptation.strategy import IAdaptationStrategy
 
 
-def adaptation_factory(algorithm_name: str):
-    """Factory to select adaptation type."""
-    adaptation_types = {
-        'srinivas': SrinivasAdapt,
-        'xiao': XiaoAdapt,
-    }
-    return adaptation_types[algorithm_name]
+class AdaptationFactory:
+    """Factory class for creating adaptation algorithm executor."""
+
+    # Internal registry for available crossover methods
+    registry = {}
+
+    @classmethod
+    def register(cls, algorithm_name: str):
+        def inner_wrapper(wrapped_class: IAdaptationStrategy):
+            # Register algorithm only if it doesn't already exist in the registry
+            if algorithm_name not in cls.registry:
+                cls.registry[algorithm_name] = wrapped_class
+            return wrapped_class
+        return inner_wrapper
+
+    @classmethod
+    def create_executor(cls, algorithm_name: str) -> IAdaptationStrategy:
+        return cls.registry[algorithm_name]

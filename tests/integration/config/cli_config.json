@@ -1,12 +1,12 @@
 {
     "strategy_settings": {
         "crossover": "single_point",
-        "initialization": "central_uniform"
+        "initialization": "nakata"
     },
     "ga_settings": {
         "population_size": 10,
         "use_elitism": false,
-        "use_adaptation": true
+        "use_adaptation": false
     },
     "mutation_settings": {
         "gauss_std": [0.01, 0.1, 1.0],

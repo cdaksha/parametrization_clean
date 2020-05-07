@@ -8,10 +8,12 @@ import random
 
 # Local source
 from domain.mutation.strategy import IMutationStrategy
+from domain.mutation.factory import MutationFactory
 from domain.individual import Individual
 from domain.root_individual import RootIndividual
 
 
+@MutationFactory.register('nakata')
 class NakataMutate(IMutationStrategy):
 
     @staticmethod
