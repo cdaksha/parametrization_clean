@@ -39,11 +39,11 @@ setup(
     include_package_data=True,
     keywords='parametrization_clean',
     name='parametrization_clean-cdaksha',
-    packages=find_packages(include=['parametrization_clean', 'parametrization_clean.*']),
+    packages=['parametrization_clean', 'parametrization_clean.*'],
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/cdaksha/parametrization_clean',
-    version='1.0.0.3',
+    version='1.0.0.4',
     zip_safe=False,
 )

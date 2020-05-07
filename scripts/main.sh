@@ -38,6 +38,9 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)"
 #   directories corresponding to their generation number (ex. generation-1/, generation-2/, ...). Each generation folder
 #   contains "children" cases corresponding to that generation: child-1/, child-2/, ..., etc. Each "child" is a ReaxFF
 #   optimization run that must be submitted and run.
+# 
+# CONFIG_PATH: string/file path, optional, otherwise set to `""`
+#	Location of user configuration JSON file to specify algorithm parameters desired for usage.
 #
 # POPULATION_SIZE: int
 #   Number of individuals one wishes to create for each generation in the generational genetic algorithm.
@@ -47,6 +50,7 @@ GENERATION_NUM=1
 MAX_GENERATION_NUM=501
 TRAINING_PATH=""
 POPULATION_PATH=""
+CONFIG_PATH=""
 POPULATION_SIZE=30
 
 
