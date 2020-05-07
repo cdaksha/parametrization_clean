@@ -48,6 +48,7 @@ class PopulationFileRepository(IPopulationRepository):
         root_ffield, _ = self.training_reax_reader.read_ffield()
         fort99_data = self.training_reax_reader.read_fort99()
 
+        # TODO: PROBLEM - First generation also requires 'fort.99' to be present in training file directory!
         fort99_extractor = Fort99Extractor(fort99_data)
         dft_energies = fort99_extractor.get_dft_energies()
         weights = fort99_extractor.get_weights()

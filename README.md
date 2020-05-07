@@ -58,10 +58,13 @@ training_files
 │---params
 │---control
 │---trainset.in
+│---fort.99
 ```
 
 Note that `iopt` files are dynamically created with a single line entry, *0*, to instruct ReaxFF not to use the "manual"
 ReaxFF parameter optimization scheme: successful one parameter parabolic extrapolation (SOPPE).
+
+Currently, `fort.99` is required in the training set directory to retrieve DFT energies and weights in the beginning.
 
 ## Running the tests
 

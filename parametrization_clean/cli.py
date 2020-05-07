@@ -21,6 +21,7 @@ def main(generation_number, training_path, population_path):
     """Command-line interface for genetic algorithm + neural network generational propagation.
     Runs one generation of the GA.
     """
+    # TODO: Make population size a command line option instead of a user configuration file option?
     click.echo("Generation Number: {}".format(generation_number))
     click.echo("Retrieving reference data from: {}".format(training_path))
     click.echo("Outputting generational genetic algorithm data to: {}".format(population_path))

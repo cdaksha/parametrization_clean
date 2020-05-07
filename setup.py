@@ -29,7 +29,7 @@ setup(
     description="ReaxFF parameter optimization scheme using generational genetic algorithm and neural networks.",
     entry_points={
         'console_scripts': [
-            'parametrization_clean=parametrization_clean.cli:main',
+            'cli=parametrization_clean.cli:main',
         ],
     },
     install_requires=requirements,
@@ -44,6 +44,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/cdaksha/parametrization_clean',
-    version='1.0.0.1',
+    version='1.0.0.3',
     zip_safe=False,
 )

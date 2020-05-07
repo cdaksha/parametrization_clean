@@ -47,7 +47,7 @@ GENERATION_NUM=1
 MAX_GENERATION_NUM=501
 TRAINING_PATH=""
 POPULATION_PATH=""
-POPULATION_SIZE=50
+POPULATION_SIZE=30
 
 
 # REAXFF JOB AUTOMATION CONSTANTS
@@ -66,7 +66,7 @@ JOB_INTERVAL=30  # How often the script should check for the job status in secon
 #######################################
 main() {
 python "${__root}/parametrization_clean/cli.py"\
-    "--generation_number ${GENERATION_NUM} --training_path ${TRAINING_PATH} --population_path ${POPULATION_PATH}"
+    --generation_number ${GENERATION_NUM} --training_path "${TRAINING_PATH}" --population_path "${POPULATION_PATH}"
 }
 
 #######################################
