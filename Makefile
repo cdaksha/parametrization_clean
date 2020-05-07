@@ -1,6 +1,8 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
+export PYTHONPATH=parametrization_clean/
+
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 

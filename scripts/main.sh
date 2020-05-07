@@ -4,10 +4,6 @@
 # Uses SLURM-style ReaxFF optimization submission script.
 
 # SETUP
-set -o errexit
-set -o pipefail
-set -o nounset
-
 # Set magic variables for current file & dir
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 __root="$(cd "$(dirname "${__dir}")" && pwd)"

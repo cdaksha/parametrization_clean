@@ -28,7 +28,8 @@ def main(generation_number, training_path, population_path, config_path):
     # TODO: Make population size a command line option instead of a user configuration file option?
     click.echo("Generation Number: {}".format(generation_number))
     click.echo("Retrieving reference data from: {}".format(training_path))
-    click.echo("Retrieving user configuration from: {}".format(config_path))
+    click.echo("Retrieving user configuration from: {}".format(config_path if config_path
+                                                               else "no user config provided...using DEFAULT config."))
     click.echo("Outputting generational genetic algorithm data to: {}".format(population_path))
 
     response = run_application(generation_number, training_path, population_path, config_path)

@@ -4,7 +4,7 @@
 as well as which code files to include.
 """
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("README.md", 'r') as readme_file:
     readme = readme_file.read()
@@ -18,7 +18,7 @@ test_requirements = ['pytest>=3', ]
 setup(
     author="Chad Daksha",
     author_email='daksha@udel.edu',
-    python_requires='>=3.7',
+    python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -39,7 +39,7 @@ setup(
     include_package_data=True,
     keywords='parametrization_clean',
     name='parametrization_clean-cdaksha',
-    packages=['parametrization_clean', 'parametrization_clean.*'],
+    packages=['parametrization_clean'],
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
