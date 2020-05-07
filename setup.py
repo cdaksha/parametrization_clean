@@ -40,6 +40,7 @@ setup(
     keywords='parametrization_clean',
     name='parametrization_clean-cdaksha',
     packages=find_packages(include=['parametrization_clean', 'parametrization_clean.*']),
+    package_dir={'parametrization_clean-cdaksha': 'parametrization_clean'},
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
