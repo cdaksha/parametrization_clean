@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """Main module to initialize/propagate genetic population and output files containing Individuals to execute
 using ReaxFF.
