@@ -8,23 +8,26 @@
 
 # Local source
 from parametrization_clean.domain.selection.strategy import ISelectionStrategy
+from parametrization_clean.domain.selection.tournament import TournamentSelect
 
 
 class SelectionFactory:
-    """Factory class for creating selection algorithm executor."""
+    """Factory class for creating selection algorithm executor - RegistryHolder design pattern.
+    Classes that implement ISelectionStrategy can be registered and utilized through this factory's registry.
+    """
 
     # Internal registry for available crossover methods
-    registry = {}
+    REGISTRY = {}
 
     @classmethod
-    def register(cls, algorithm_name: str):
-        def inner_wrapper(wrapped_class: ISelectionStrategy):
-            # Register algorithm only if it doesn't already exist in the registry
-            if algorithm_name not in cls.registry:
-                cls.registry[algorithm_name] = wrapped_class
-            return wrapped_class
-        return inner_wrapper
+    def register(cls, algorithm_name: str, mutation_class):
+        """Register a class with a string key."""
+        cls.REGISTRY[algorithm_name] = mutation_class
+        return mutation_class
 
     @classmethod
     def create_executor(cls, algorithm_name: str) -> ISelectionStrategy:
-        return cls.registry[algorithm_name]
+        return cls.REGISTRY[algorithm_name]
+
+
+SelectionFactory.register('tournament', TournamentSelect)

@@ -9,12 +9,10 @@ import random
 
 # Local source
 from parametrization_clean.domain.crossover.strategy import ICrossoverStrategy
-from parametrization_clean.domain.crossover.factory import CrossoverFactory
 from parametrization_clean.domain.individual import Individual
 from parametrization_clean.domain.root_individual import RootIndividual
 
 
-@CrossoverFactory.register('two_point')
 class TwoPointCross(ICrossoverStrategy):
 
     @staticmethod

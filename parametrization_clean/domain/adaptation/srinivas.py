@@ -8,10 +8,8 @@ from typing import Tuple, List
 
 # Local source
 from parametrization_clean.domain.adaptation.strategy import IAdaptationStrategy
-from parametrization_clean.domain.adaptation.factory import AdaptationFactory
 
 
-@AdaptationFactory.register('srinivas')
 class SrinivasAdapt(IAdaptationStrategy):
 
     @staticmethod

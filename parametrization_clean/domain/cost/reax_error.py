@@ -8,10 +8,8 @@
 
 # Local source
 from parametrization_clean.domain.cost.strategy import IErrorStrategy
-from parametrization_clean.domain.cost.factory import ErrorFactory
 
 
-@ErrorFactory.register('reax_error')
 class ReaxError(IErrorStrategy):
 
     @staticmethod

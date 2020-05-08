@@ -9,11 +9,9 @@ import random
 
 # Local source
 from parametrization_clean.domain.selection.strategy import ISelectionStrategy
-from parametrization_clean.domain.selection.factory import SelectionFactory
 from parametrization_clean.domain.individual import Individual
 
 
-@SelectionFactory.register('tournament')
 class TournamentSelect(ISelectionStrategy):
 
     @staticmethod

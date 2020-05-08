@@ -8,23 +8,28 @@
 
 # Local source
 from parametrization_clean.domain.adaptation.strategy import IAdaptationStrategy
+from parametrization_clean.domain.adaptation.srinivas import SrinivasAdapt
+from parametrization_clean.domain.adaptation.xiao import XiaoAdapt
 
 
 class AdaptationFactory:
-    """Factory class for creating adaptation algorithm executor."""
+    """Factory class for creating adaptation algorithm executor - RegistryHolder design pattern.
+    Classes that implement IAdaptationStrategy can be registered and utilized through this factory's registry.
+    """
 
     # Internal registry for available crossover methods
-    registry = {}
+    REGISTRY = {}
 
     @classmethod
-    def register(cls, algorithm_name: str):
-        def inner_wrapper(wrapped_class: IAdaptationStrategy):
-            # Register algorithm only if it doesn't already exist in the registry
-            if algorithm_name not in cls.registry:
-                cls.registry[algorithm_name] = wrapped_class
-            return wrapped_class
-        return inner_wrapper
+    def register(cls, algorithm_name: str, mutation_class):
+        """Register a class with a string key."""
+        cls.REGISTRY[algorithm_name] = mutation_class
+        return mutation_class
 
     @classmethod
     def create_executor(cls, algorithm_name: str) -> IAdaptationStrategy:
-        return cls.registry[algorithm_name]
+        return cls.REGISTRY[algorithm_name]
+
+
+AdaptationFactory.register('srinivas', SrinivasAdapt)
+AdaptationFactory.register('xiao', XiaoAdapt)

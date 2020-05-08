@@ -68,8 +68,7 @@ JOB_INTERVAL=30  # How often the script should check for the job status in secon
 # in the generational GA. Output generational summary & ANN statistics (if ANN is enabled).
 #######################################
 main() {
-python "${__root}/parametrization_clean/cli.py"\
-    --generation_number ${GENERATION_NUM} --training_path "${TRAINING_PATH}" --population_path "${POPULATION_PATH}" \
+cli --generation_number ${GENERATION_NUM} --training_path "${TRAINING_PATH}" --population_path "${POPULATION_PATH}" \
     --config_path "${CONFIG_PATH}"
 }
 

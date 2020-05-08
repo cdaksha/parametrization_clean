@@ -8,23 +8,26 @@
 
 # Local source
 from parametrization_clean.domain.cost.strategy import IErrorStrategy
+from parametrization_clean.domain.cost.reax_error import ReaxError
 
 
 class ErrorFactory:
-    """Factory class for creating cost/error calculator algorithm executor."""
+    """Factory class for creating error calculator algorithm executor - RegistryHolder design pattern.
+    Classes that implement IErrorStrategy can be registered and utilized through this factory's registry.
+    """
 
     # Internal registry for available crossover methods
-    registry = {}
+    REGISTRY = {}
 
     @classmethod
-    def register(cls, algorithm_name: str):
-        def inner_wrapper(wrapped_class: IErrorStrategy):
-            # Register algorithm only if it doesn't already exist in the registry
-            if algorithm_name not in cls.registry:
-                cls.registry[algorithm_name] = wrapped_class
-            return wrapped_class
-        return inner_wrapper
+    def register(cls, algorithm_name: str, mutation_class):
+        """Register a class with a string key."""
+        cls.REGISTRY[algorithm_name] = mutation_class
+        return mutation_class
 
     @classmethod
     def create_executor(cls, algorithm_name: str) -> IErrorStrategy:
-        return cls.registry[algorithm_name]
+        return cls.REGISTRY[algorithm_name]
+
+
+ErrorFactory.register('reax_error', ReaxError)
