@@ -77,5 +77,5 @@ class UserSettings(DefaultSettings):
         """Extract and set class attributes from JSON dictionary object."""
         for key, value in json_dict.items():
             # adding underscore as each attribute is stored as protected property
-            attribute_name = "_" + key
+            attribute_name = key
             setattr(config_object, attribute_name, value)

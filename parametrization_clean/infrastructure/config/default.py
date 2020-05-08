@@ -24,71 +24,95 @@ from parametrization_clean.use_case.port.settings_repository import (IStrategySe
 
 
 class DefaultStrategySettings(IStrategySettings):
-    selection_strategy = TournamentSelect
-    mutation_strategy = GaussianMutate
-    crossover_strategy = DoubleParetoCross
-    adaptation_strategy = XiaoAdapt
-    error_strategy = ReaxError
-    initialization_strategy = NakataMutate
+
+    def __init__(self):
+        super().__init__()
+        self.selection_strategy = TournamentSelect
+        self.mutation_strategy = GaussianMutate
+        self.crossover_strategy = DoubleParetoCross
+        self.adaptation_strategy = XiaoAdapt
+        self.error_strategy = ReaxError
+        self.initialization_strategy = NakataMutate
 
 
 class DefaultGeneticAlgorithmSettings(IGeneticAlgorithmSettings):
-    population_size = 30
-    mutation_rate = 0.2
-    crossover_rate = 0.8
-    use_elitism = True
-    use_adaptation = False
-    use_neural_network = False
+
+    def __init__(self):
+        super().__init__()
+        self.population_size = 30
+        self.mutation_rate = 0.2
+        self.crossover_rate = 0.8
+        self.use_elitism = True
+        self.use_adaptation = False
+        self.use_neural_network = False
 
 
 class DefaultMutationSettings(IMutationSettings):
-    gauss_std = [0.01, 0.1]
-    gauss_frac = [0.5, 0.5]
 
-    nakata_rand_lower = -1.0
-    nakata_rand_higher = 1.0
-    nakata_scale = 0.1
+    def __init__(self):
+        super().__init__()
+        self.gauss_std = [0.01, 0.1]
+        self.gauss_frac = [0.5, 0.5]
 
-    polynomial_eta = 60
+        self.nakata_rand_lower = -1.0
+        self.nakata_rand_higher = 1.0
+        self.nakata_scale = 0.1
 
-    param_bounds = []
+        self.polynomial_eta = 60
+
+        self.param_bounds = []
 
 
 class DefaultCrossoverSettings(ICrossoverSettings):
-    dpx_alpha = 10
-    dpx_beta = 1
+
+    def __init__(self):
+        super().__init__()
+        self.dpx_alpha = 10
+        self.dpx_beta = 1
 
 
 class DefaultSelectionSettings(ISelectionSettings):
-    tournament_size = 2
+
+    def __init__(self):
+        super().__init__()
+        self.tournament_size = 2
 
 
 class DefaultAdaptationSettings(IAdaptationSettings):
-    srinivas_k1 = 1.0
-    srinivas_k2 = 0.5
-    srinivas_k3 = 1.0
-    srinivas_k4 = 0.5
-    srinivas_default_mutation_rate = 0.01
 
-    xiao_min_mutation_rate = DefaultGeneticAlgorithmSettings().mutation_rate * 0.8
-    xiao_min_crossover_rate = DefaultGeneticAlgorithmSettings().crossover_rate * 0.8
-    xiao_scale = 40
+    def __init__(self):
+        super().__init__()
+        self.srinivas_k1 = 1.0
+        self.srinivas_k2 = 0.5
+        self.srinivas_k3 = 1.0
+        self.srinivas_k4 = 0.5
+        self.srinivas_default_mutation_rate = 0.01
+
+        self.xiao_min_mutation_rate = DefaultGeneticAlgorithmSettings().mutation_rate * 0.8
+        self.xiao_min_crossover_rate = DefaultGeneticAlgorithmSettings().crossover_rate * 0.8
+        self.xiao_scale = 40
 
 
 class DefaultNeuralNetSettings(INeuralNetSettings):
-    verbosity = 2
-    train_fraction = 0.8
-    num_epochs = 10000
-    num_populations_to_train_on = 1
-    num_nested_ga_iterations = 1
-    minimum_validation_r_squared = 0.95
+
+    def __init__(self):
+        super().__init__()
+        self.verbosity = 2
+        self.train_fraction = 0.8
+        self.num_epochs = 10000
+        self.num_populations_to_train_on = 1
+        self.num_nested_ga_iterations = 1
+        self.minimum_validation_r_squared = 0.95
 
 
 class DefaultSettings(IAllSettings):
-    strategy_settings = DefaultStrategySettings
-    ga_settings = DefaultGeneticAlgorithmSettings
-    mutation_settings = DefaultMutationSettings
-    crossover_settings = DefaultCrossoverSettings
-    selection_settings = DefaultSelectionSettings
-    adaptation_settings = DefaultAdaptationSettings
-    neural_net_settings = DefaultNeuralNetSettings
+
+    def __init__(self):
+        super().__init__()
+        self.strategy_settings = DefaultStrategySettings()
+        self.ga_settings = DefaultGeneticAlgorithmSettings()
+        self.mutation_settings = DefaultMutationSettings()
+        self.crossover_settings = DefaultCrossoverSettings()
+        self.selection_settings = DefaultSelectionSettings()
+        self.adaptation_settings = DefaultAdaptationSettings()
+        self.neural_net_settings = DefaultNeuralNetSettings()
