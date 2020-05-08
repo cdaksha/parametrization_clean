@@ -5,6 +5,9 @@ dist: xenial
 python:
   - 3.7
 
+env:
+  - CODECOV_TOKEN=aea0a4e9-6aa6-4216-a67e-55a14e402e2c
+
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 #install: pip install -U tox-travis
 install: pip install -r requirements/test.txt
@@ -12,4 +15,6 @@ install: pip install -r requirements/test.txt
 # Command to run tests, e.g. python setup.py test
 script: tox
 
+after_success:
+  - codecov
 
