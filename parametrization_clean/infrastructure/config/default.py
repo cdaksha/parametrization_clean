@@ -206,8 +206,8 @@ class DefaultAdaptationSettings(IAdaptationSettings):
         self._srinivas_k3 = 1.0
         self._srinivas_k4 = 0.5
         self._srinivas_default_mutation_rate = 0.01
-        self._xiao_min_crossover_rate = DefaultGeneticAlgorithmSettings().crossover_rate * 0.8
         self._xiao_min_mutation_rate = DefaultGeneticAlgorithmSettings().mutation_rate * 0.8
+        self._xiao_min_crossover_rate = DefaultGeneticAlgorithmSettings().crossover_rate * 0.8
         self._xiao_scale = 40
 
     @property

@@ -5,7 +5,6 @@ Overrides default parameters.
 """
 
 # Standard library
-import os
 import sys
 import json
 

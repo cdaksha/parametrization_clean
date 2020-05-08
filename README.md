@@ -22,28 +22,49 @@ If you don't have pip and/or Python installed, then [this](https://docs.python-g
 guide may prove helpful in performing a basic setup. If, for whatever reason, a distribution manager such as pip or
 conda is not available, then the required packages for running the application are shown in `requirements/prod.txt`.
 
-The current implementation supports a command-line interface with usage
+After installing the package with pip, the current implementation supports a command-line interface with usage
 
 ```
-$python cli.py --g GENERATION_NUMBER --t TRAINING_PATH --p POPULATION_PATH
+$cli --g GENERATION_NUMBER --t TRAINING_PATH --p POPULATION_PATH --c CONFIG_PATH
 ```
 
 where *GENERATION_NUMBER* is the current generation number in the generational genetic algorithm, *TRAINING_PATH*
-is the file path location of the reference ReaxFF training set files, and *POPULATION_PATH* is the location at which
-the user wishes the generational genetic algorithm files to be outputted.
+is the file path location of the reference ReaxFF training set files, *POPULATION_PATH* is the location at which
+the user wishes the generational genetic algorithm files to be outputted, and *CONFIG_PATH* is the location at which
+a user-defined JSON configuration file can be entered. The last field is not required, as defaults are provided for
+each algorithm and genetic algorithm setting.
+
+All options used in the default configuration are shown in the `example` folder [here](example/config.json). The user
+can tune one (or many) of these parameters by defining a config.json file at the *CONFIG_PATH* location, such as the
+following:
+
+```json
+{
+  "strategy_settings": {
+    "mutation": "nakata"
+  },
+  "ga_settings": {
+    "population_size": 50,
+    "use_neural_network": true
+  }
+}
+```
+
+Note that, **at the very least, the user should define the *population_size* parameter**. This parameter controls the
+number of individuals in the genetic algorithm's population.
 
 If *GENERATION_NUMBER* = 1, then the first population is initialized, whose ReaxFF optimizations can then be submitted
 for evaluation of the parameters. If *GENERATION_NUMBER* > 1, the previous generation's data is read from
 *POPULATION_PATH*, and classic genetic operators are applied to generate the next generation and output to the
 *POPULATION_PATH* once again, after which the corresponding ReaxFF optimizations may be submitted.
 
-To automate the generational genetic algorithm, an example slurm script is provided in the `scripts` directory. This
-allows concurrent submission of ReaxFF optimizations and continuation of the generational genetic algorithm until a
-threshold, defined by a maximum generation number, is reached.
+To automate the generational genetic algorithm, an example slurm script is provided in the `example` directory
+[here](example/main.sh). This allows concurrent submission of ReaxFF optimizations and continuation of the
+generational genetic algorithm until a threshold, defined by a maximum generation number, is reached.
 
-Note that several options are provided for potential mutation, crossover, etc., algorithms that the user may use.
-Reasonable defaults based on the literature are provided, but they are easy to override by defining a custom
-`config.json` file in the project root directory.
+Again, note that several options are provided for potential mutation, crossover, etc., algorithms that the user may use.
+Reasonable defaults based on the literature are provided, but they are easy to override by defining the custom
+`config.json` file and providing the location to the command line interface, as suggested earlier.
 
 ### Prerequisites
 

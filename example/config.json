@@ -1,0 +1,52 @@
+{
+    "strategy_settings": {
+        "selection": "tournament",
+        "mutation": "gauss",
+        "crossover": "double_pareto",
+        "adaptation": "xiao",
+        "error": "reax_error",
+        "initialization": "nakata"
+    },
+    "ga_settings": {
+        "population_size": 30,
+        "mutation_rate": 0.20,
+        "crossover_rate": 0.80,
+        "use_elitism": true,
+        "use_adaptation": false,
+        "use_neural_network": false
+    },
+    "mutation_settings": {
+        "gauss_std": [0.01, 1.0],
+        "gauss_frac": [0.5, 0.5],
+        "nakata_rand_lower": -1.0,
+        "nakata_rand_higher": 1.0,
+        "nakata_scale": 0.1,
+        "polynomial_eta": 60,
+        "param_bounds": []
+    },
+    "crossover_settings": {
+        "dpx_alpha": 10,
+        "dpx_beta": 1
+    },
+    "selection_settings": {
+        "tournament_size": 2
+    },
+    "adaptation_settings": {
+        "srinivas_k1": 1.0,
+        "srinivas_k2": 0.5,
+        "srinivas_k3": 1.0,
+        "srinivas_k4": 0.5,
+        "srinivas_default_mutation_rate": 0.01,
+        "xiao_min_mutation_rate": 0.16,
+        "xiao_min_crossover_rate": 0.64,
+        "xiao_scale": 40
+    },
+    "neural_net_settings": {
+        "verbosity": 2,
+        "train_fraction": 0.8,
+        "num_epochs": 10000,
+        "num_populations_to_train_on": 1,
+        "num_nested_ga_iterations": 1,
+        "minimum_validation_r_squared": 0.95
+    }
+}

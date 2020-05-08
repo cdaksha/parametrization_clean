@@ -34,7 +34,7 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)"
 #   directories corresponding to their generation number (ex. generation-1/, generation-2/, ...). Each generation folder
 #   contains "children" cases corresponding to that generation: child-1/, child-2/, ..., etc. Each "child" is a ReaxFF
 #   optimization run that must be submitted and run.
-# 
+#
 # CONFIG_PATH: string/file path, optional, otherwise set to `""`
 #	Location of user configuration JSON file to specify algorithm parameters desired for usage.
 #
@@ -66,7 +66,8 @@ JOB_INTERVAL=30  # How often the script should check for the job status in secon
 #######################################
 main() {
 python "${__root}/parametrization_clean/cli.py"\
-    --generation_number ${GENERATION_NUM} --training_path "${TRAINING_PATH}" --population_path "${POPULATION_PATH}"
+    --generation_number ${GENERATION_NUM} --training_path "${TRAINING_PATH}" --population_path "${POPULATION_PATH}" \
+    --config_path "${CONFIG_PATH}"
 }
 
 #######################################

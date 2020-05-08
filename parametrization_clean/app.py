@@ -18,6 +18,26 @@ from parametrization_clean.infrastructure.presenter.file_writer import DataWrite
 
 
 def run_application(generation_number, training_path, population_path, config_path):
+    """High-level application driver that either initializes the first population (`generation_number` = 1)
+    or propagates the population one step forward (`generation_number` > 1).
+
+    Parameters
+    ----------
+    generation_number: int
+        Current generation number in the generational genetic algorithm.
+    training_path: str
+        File path with location of reference training set files.
+    population_path: str
+        File path with desired output location for generational GA data.
+    config_path: str, optional
+        File path containing JSON user configuration file. See the module
+        `~parametrization_clean.infrastructure.config.default~` to find all options that can be tuned.
+
+    Returns
+    -------
+        response: ResponseSuccess, ResponseWarning, or ResponseFailure
+            Response object indicating if next generation was successfully created.
+    """
     user_settings = UserSettings(config_path)
     population_repository = PopulationFileRepository(training_path, population_path,
                                                      user_settings, generation_number)

@@ -38,7 +38,9 @@ class PopulationFileRepository(IPopulationRepository):
         self.population_size = settings_repository.ga_settings.population_size
         self.current_generation_number = current_generation_number
 
-        self.param_keys, _, _ = self.training_reax_reader.read_params()
+        # SETTING CONFIG's PARAMETER BOUNDS HERE FOR NOW
+        self.param_keys, _, param_bounds = self.training_reax_reader.read_params()
+        settings_repository.mutation_settings._param_bounds = param_bounds
 
         if not os.path.isdir(population_path):
             os.mkdir(population_path)
