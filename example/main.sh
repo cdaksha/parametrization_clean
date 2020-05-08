@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 #
-# Wrapper bash script that calls the command line interface to run the application.
-# Uses SLURM-style ReaxFF optimization submission script.
+# Example usage of automating the command line interface to run a job that continues many generations.
+# The role of the Python application is to propagate from one generation to the next.
+# The role of this wrapper Bash script is to submit the ReaxFF optimizations that were created, monitor them, and
+# call the Python application once more after the optimizations are completed.
+# This example uses a SLURM-style ReaxFF optimization submission script.
 
 # SETUP
 # Set magic variables for current file & dir

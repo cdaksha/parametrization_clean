@@ -1,5 +1,6 @@
 # ReaxFF Parametrization with Clean Architecture
 [![Build Status](https://travis-ci.com/cdaksha/parametrization_clean.svg?token=LpB61vRRhRXYf6MrmquF&branch=master)](https://travis-ci.com/cdaksha/parametrization_clean)
+[![codecov](https://codecov.io/gh/cdaksha/parametrization_clean/branch/master/graph/badge.svg?token=AWGP6HY2VD)](https://codecov.io/gh/cdaksha/parametrization_clean)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Contains Python files and Bash scripts as a basis for automated ReaxFF parametrization. Uses the genetic algorithm (GA)
