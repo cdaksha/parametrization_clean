@@ -6,3 +6,13 @@ History
 ------------------
 
 * First release on PyPI.
+
+1.0.1 (2020-05-07)
+------------------
+
+* Configuration file path now taken as user input through command line application
+* Added codecov badge
+* Added documentation
+* Added example JSON and wrapper bash script
+* Refactored factory design patterns used for picking algorithms
+
