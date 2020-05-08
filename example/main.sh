@@ -89,7 +89,7 @@ echo "Submitting simulations for generation-${GENERATION_NUM}..."
 
 for ((i = 0; i < ${total_num_files}; i++)); do
 INPUT="child-${i}"
-cd "${POPULATION_PATH}/generation-${GENERATION_NUM}/$INPUT"
+cd "${POPULATION_PATH}/generation-${GENERATION_NUM}/$INPUT" || exit
 
 cat > $INPUT.sh << EOF
 #!/bin/bash -l
@@ -119,7 +119,7 @@ chmod u+x $INPUT.sh
 sbatch $INPUT.sh
 done
 # Go back to original directory
-cd "${__dir}"
+cd "${__dir}" || exit
 }
 
 

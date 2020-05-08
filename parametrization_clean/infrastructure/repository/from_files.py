@@ -40,7 +40,7 @@ class PopulationFileRepository(IPopulationRepository):
 
         # SETTING CONFIG's PARAMETER BOUNDS HERE FOR NOW
         self.param_keys, _, param_bounds = self.training_reax_reader.read_params()
-        settings_repository.mutation_settings._param_bounds = param_bounds
+        settings_repository.mutation_settings.param_bounds = param_bounds
 
         if not os.path.isdir(population_path):
             os.mkdir(population_path)

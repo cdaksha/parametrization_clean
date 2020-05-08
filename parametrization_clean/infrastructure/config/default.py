@@ -23,6 +23,19 @@ from parametrization_clean.use_case.port.settings_repository import (IStrategySe
                                                                      IAllSettings)
 
 
+class DefaultSettings(IAllSettings):
+
+    def __init__(self):
+        super().__init__()
+        self.strategy_settings = DefaultStrategySettings()
+        self.ga_settings = DefaultGeneticAlgorithmSettings()
+        self.mutation_settings = DefaultMutationSettings()
+        self.crossover_settings = DefaultCrossoverSettings()
+        self.selection_settings = DefaultSelectionSettings()
+        self.adaptation_settings = DefaultAdaptationSettings()
+        self.neural_net_settings = DefaultNeuralNetSettings()
+
+
 class DefaultStrategySettings(IStrategySettings):
 
     def __init__(self):
@@ -103,16 +116,3 @@ class DefaultNeuralNetSettings(INeuralNetSettings):
         self.num_populations_to_train_on = 1
         self.num_nested_ga_iterations = 1
         self.minimum_validation_r_squared = 0.95
-
-
-class DefaultSettings(IAllSettings):
-
-    def __init__(self):
-        super().__init__()
-        self.strategy_settings = DefaultStrategySettings()
-        self.ga_settings = DefaultGeneticAlgorithmSettings()
-        self.mutation_settings = DefaultMutationSettings()
-        self.crossover_settings = DefaultCrossoverSettings()
-        self.selection_settings = DefaultSelectionSettings()
-        self.adaptation_settings = DefaultAdaptationSettings()
-        self.neural_net_settings = DefaultNeuralNetSettings()
