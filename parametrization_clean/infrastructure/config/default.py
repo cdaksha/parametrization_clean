@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-"""Default parameters used for genetic algorithm/neural network."""
+"""Contains default config classes with default parameters used for genetic algorithm/neural network, based on the
+settings repository port.
+"""
 
 # Standard library
 
@@ -73,6 +75,8 @@ class DefaultMutationSettings(IMutationSettings):
 
         self.polynomial_eta = 60
 
+        # TODO: Currently causes issues with central uniform mutate -> no mutations caused...
+        # Either set equal to None or raise Exception if central uniform mutate called with param bounds that aren't set
         self.param_bounds = []
 
 

@@ -25,10 +25,16 @@ class Individual(object):
         The ffield dict is updated by using the reference/root ffield dict and setting the parameters at the given
         parameter keys.
 
-        :param params: List containing param values mapped from param_keys to ffield.
-        :param reax_energies: List containing ReaxFF energies (output from fort.99).
-        :param root_individual: Root individual with stored dft energies, weights, etc.
-        :param error_calculator: Strategy for error computation. Default = ReaxFF Error.
+        Parameters
+        ----------
+        params: List[float]
+            List containing parameter values mapped from param_keys to ffield.
+        reax_energies: List[float]
+            List containing ReaxFF energies (output from fort.99).
+        root_individual: RootIndividual
+            Root individual with stored reference/training set configuration: dft energies, weights, etc.
+        error_calculator: IErrorStrategy, default = ReaxError
+            Strategy for error computation.
         """
         self.params = params
         self.reax_energies = reax_energies

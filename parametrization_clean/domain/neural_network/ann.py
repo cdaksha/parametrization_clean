@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-"""Module with densely-connected Feed-Forward Neural Network with one hidden layer."""
+"""Module with densely-connected Feed-Forward Neural Network with one hidden layer.
+Uses Keras with TensorFlow backend to build the neural network.
+"""
 
 # Standard library
 from typing import List

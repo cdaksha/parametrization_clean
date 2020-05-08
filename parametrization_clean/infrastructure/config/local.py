@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """Module to parse user-provided, local parameters used for genetic algorithm/neural network.
-Overrides default parameters.
+Overrides default parameters. User-provided configuration file is optional.
 """
 
 # Standard library
@@ -12,6 +12,8 @@ import json
 
 # Local source
 from parametrization_clean.infrastructure.config.default import DefaultSettings
+# Note: the following imports are required so that python can use the relevant algorithm factory in finding the
+# user-requested algorithm
 from parametrization_clean.domain.selection.factory import SelectionFactory
 from parametrization_clean.domain.adaptation.factory import AdaptationFactory
 from parametrization_clean.domain.cost.factory import ErrorFactory

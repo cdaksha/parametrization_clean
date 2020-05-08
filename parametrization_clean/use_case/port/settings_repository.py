@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
-"""
-Module that contains interface for repository used to get configuration settings.
-
-__author__ = "Chad Daksha"
+"""Module that contains interface for settings repository, used to get configuration settings.
+All settings are subdivided into different categories based on groupings/relevance.
 """
 
 # Standard library

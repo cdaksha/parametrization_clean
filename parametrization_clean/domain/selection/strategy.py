@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-"""Module with interface for selection operators to be performed on Individuals."""
+"""Module with interface for selection operators to be performed on Individuals.
+New selection strategies can be added as classes, so long as they implement the abstraction presented here.
+"""
 
 # Standard library
 import abc

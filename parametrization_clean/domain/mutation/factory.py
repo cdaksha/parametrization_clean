@@ -24,7 +24,23 @@ class MutationFactory:
 
     @classmethod
     def register(cls, algorithm_name: str, mutation_class):
-        """Register a class with a string key."""
+        """Register a mutation strategy with a string key. Useful for abstraction and dynamic retrieval
+        of different algorithms in configuration file. Using this factory, one can easily implement a crossover
+        algorithm (ex. MyMutationClass) that follows IMutationStrategy, then use
+        "MutationFactory.register('my_mutation_class')"
+        to generate a corresponding string reference for that mutation strategy.
+
+        Parameters
+        ----------
+        algorithm_name: str
+            Name that one wishes to assign to the designated `mutation_class`/algorithm.
+        mutation_class
+            Class that one wishes to associate/register with `algorithm_name`.
+        Returns
+        -------
+        mutation_class
+            Same as the `mutation_class` input parameter.
+        """
         cls.REGISTRY[algorithm_name] = mutation_class
         return mutation_class
 

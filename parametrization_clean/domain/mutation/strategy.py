@@ -2,6 +2,7 @@
 
 """
 Module that contains interface for mutation methods to be used for an Individual.
+New mutation strategies can be added as classes, so long as they implement the abstraction presented here.
 
 __author__ = "Chad Daksha"
 """

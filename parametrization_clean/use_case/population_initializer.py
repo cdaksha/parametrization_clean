@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
 """Module with class to initialize first generation ReaxFF genetic algorithm by applying mutations to
-a reference training case.
+a reference training case, then output the corresponding first generation of individuals using the population
+repository.
+
+PROBLEM: Reference training set must also contain 'fort.99', which is an output file from ReaxFF optimization.
+The first generation really shouldn't require the user to already have a fort.99 file; this should be revised in the
+future.
 """
 
 # Standard library

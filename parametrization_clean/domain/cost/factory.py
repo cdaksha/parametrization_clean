@@ -20,10 +20,26 @@ class ErrorFactory:
     REGISTRY = {}
 
     @classmethod
-    def register(cls, algorithm_name: str, mutation_class):
-        """Register a class with a string key."""
-        cls.REGISTRY[algorithm_name] = mutation_class
-        return mutation_class
+    def register(cls, algorithm_name: str, error_calculator_class):
+        """Register an error calculation strategy with a string key. Useful for abstraction and dynamic retrieval
+        of different algorithms in configuration file. Using this factory, one can easily implement an error
+        calculation algorithm (ex. MyErrorCalculatorClass) that follows IErrorStrategy, then use
+        "ErrorFactory.register('my_error_calculator_class')"
+        to generate a corresponding string reference for that error calculation strategy.
+
+        Parameters
+        ----------
+        algorithm_name: str
+            Name that one wishes to assign to the designated `error_calculator_class`/algorithm.
+        error_calculator_class
+            Class that one wishes to associate/register with `algorithm_name`.
+        Returns
+        -------
+        error_calculator_class
+            Same as the `error_calculator_class` input parameter.
+        """
+        cls.REGISTRY[algorithm_name] = error_calculator_class
+        return error_calculator_class
 
     @classmethod
     def create_executor(cls, algorithm_name: str) -> IErrorStrategy:

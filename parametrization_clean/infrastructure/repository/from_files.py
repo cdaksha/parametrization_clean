@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 
-"""Concrete implementation of population repository interface. Reads files to get data."""
+"""Concrete implementation of population repository interface. Gets data through files, since that
+is currently the standard method to interact with the standalone ReaxFF optimizations. Also allows output writing
+of individuals and entire populations in the genetic algorithm. The `control`, `geo`, `params`, `trainset.in`, and
+`ffield` files in the reference training set folder are required. For new individuals generated, an `iopt` file is
+automatically generated with one line, a zero, to indicate that ReaxFF should NOT perform its own manual optimization
+method, Successive One Parameter Parabolic Extrapolation (SOPPE).
+
+The user has the choice of specifying parameter bounds or leaving them empty in the `params` ReaxFF file.
+
+NOTE: Currently, a `fort.99` example output is also required in the reference training set. In the future, this
+shouldn't be required as the first generation initializes the population and shouldn't need cost/error data.
+"""
 
 # Standard library
 from typing import List, Tuple

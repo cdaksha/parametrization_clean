@@ -21,10 +21,26 @@ class AdaptationFactory:
     REGISTRY = {}
 
     @classmethod
-    def register(cls, algorithm_name: str, mutation_class):
-        """Register a class with a string key."""
-        cls.REGISTRY[algorithm_name] = mutation_class
-        return mutation_class
+    def register(cls, algorithm_name: str, adaptation_class):
+        """Register an adaptation strategy with a string key. Useful for abstraction and dynamic retrieval
+        of different algorithms in configuration file. Using this factory, one can easily implement an adaptation
+        algorithm (ex. MyAdaptationClass) that follows IAdaptationStrategy, then use
+        "AdaptationFactory.register('my_adaptation_class')"
+        to generate a corresponding string reference for that adaptation strategy.
+
+        Parameters
+        ----------
+        algorithm_name: str
+            Name that one wishes to assign to the designated `adaptation_class`/algorithm.
+        adaptation_class
+            Class that one wishes to associate/register with `algorithm_name`.
+        Returns
+        -------
+        adaptation_class
+            Same as the `adaptation_class` input parameter.
+        """
+        cls.REGISTRY[algorithm_name] = adaptation_class
+        return adaptation_class
 
     @classmethod
     def create_executor(cls, algorithm_name: str) -> IAdaptationStrategy:

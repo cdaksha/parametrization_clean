@@ -2,6 +2,7 @@
 
 """
 Module that contains interface for adaptive genetic algorithm methods to be used for an Individual.
+New adaptation strategies can be added as classes, so long as they implement the abstraction presented here.
 
 __author__ = "Chad Daksha"
 """

@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 
-"""Present data from results of genetic algorithm/ANN."""
+"""Present data from results of genetic algorithm/ANN. Allows user to write a list of lists to a CSV file (or
+any other delimiter, as specified) through `write_rows_to_csv`, to create or append one row of data to a file through
+`create_or_append`, or to write the summary of one generation of the genetic algorithm whose ReaxFF optimizations
+have been completed (and therefore whose individuals have known costs/errors) through `write_summary`.
+`write_outputs` allows generation of several outputs: total error as a function of generation number to
+"00-generation-vs-error.txt", the summary of the previous generation to "00-gen-summary.txt", as well as summary
+of the results of training the neural network to "00-ann-summary"---the last only if the neural network is enabled
+and TensorFlow 2.0 is installed.
+"""
 
 # Standard library
 import csv

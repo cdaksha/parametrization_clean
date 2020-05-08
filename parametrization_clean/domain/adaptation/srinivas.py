@@ -15,12 +15,27 @@ class SrinivasAdapt(IAdaptationStrategy):
     @staticmethod
     def adaptation(average_cost: float, minimum_cost: float, parent_costs: Tuple[float, float], **kwargs) \
             -> Tuple[float, List[float]]:
-        """Execute Srinivas adaptive algorithm.
+        """Execute Srinivas adaptive algorithm. See Srinivas' 1994 paper on "Adaptive probabilities of crossover
+        and mutation in genetic algorithms" for more information.
 
-        :param average_cost: Measure of central tendency of cost of population. Can also be the median.
-        :param minimum_cost: Lowest cost of population of Individuals.
-        :param parent_costs: Tuple containing costs associated with two parents.
-        :return: Tuple with (probability of crossover, [probabilities of mutation]).
+        Parameters
+        ----------
+        average_cost: float
+            Measure of central tendency of cost of population. Can also be the median.
+        minimum_cost: float
+            Lowest cost of population of Individuals.
+        parent_costs: Tuple[float, float]
+            Tuple containing costs associated with two parents.
+        kwargs: Dict
+            Retrieves parameters associated with executing this algorithm from the passed optional dict; otherwise,
+            defaults are used.
+
+        Returns
+        -------
+        cross_rate: float
+            Updated crossover rate.
+        mutation_rates: List[float, float]
+            Updated mutation rates for each of the two children about to be generated from the two parents.
         """
         k1 = kwargs.get('srinivas_k1', 1.0)
         k2 = kwargs.get('srinivas_k2', 0.5)

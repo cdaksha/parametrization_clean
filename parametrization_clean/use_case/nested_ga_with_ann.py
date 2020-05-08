@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-"""Uses ANN to propagate population several times."""
+"""Uses ANN to propagate population several times, i.e., a nested GA propagator that runs for several iterations
+without performing any ReaxFF optimizations. Requires TensorFlow 2.0.
+"""
 
 # Standard library
 from typing import List

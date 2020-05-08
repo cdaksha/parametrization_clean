@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-"""Response object for repository output usage."""
+"""Response objects for repository output usage. The idea is to return a ResponseSuccess if data writing is
+successful, to return a ResponseWarning if there were overcomeable (but potentially problematic) occurrences,
+and to return a ResponseFailure if writing individuals was completely unsuccessful.
+"""
 
 # Standard library
 

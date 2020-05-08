@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 
-"""
-Module that contains interface for repository used to get data on Individual(s) in the genetic pool.
-
-__author__ = "Chad Daksha"
+"""Module that contains interface for repository used to get data on Individual(s) in the genetic pool.
 """
 
 # Standard library

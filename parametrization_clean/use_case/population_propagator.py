@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-"""Combines domain logic to propagate (generational) genetic algorithm."""
+"""Combines domain logic to propagate (generational) genetic algorithm. To be used if the generation number
+is greater than one. Applies selection, crossover, mutation, and adaptation operators on the parents (individuals
+from the previous generation) to generate better offspring/children (individuals for the next generation).
+"""
 
 # Standard library
 from typing import List, Tuple

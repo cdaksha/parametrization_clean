@@ -29,10 +29,16 @@ class RootIndividual(Borg):
         For example, the weights of the error, DFT energies, parameter bounds only need to be stored once.
         Input structures are converted to tuples to prevent mutation.
 
-        :param dft_energies: Tuple containing DFT energies, used to compute error.
-        :param weights: Tuple containing weights, used to compute error.
-        :param root_ffield: Dictionary mapping section number to data contained in that section.
-        :param param_keys: List of keys pointing to values in the ffield object.
+        Parameters
+        ----------
+        dft_energies: List[float]
+            Stored as a tuple containing DFT energies; used to compute error.
+        weights: List[float]
+            Stored as a tuple containing weights, used to compute error.
+        root_ffield: Dict[int, List]
+            Dictionary mapping ReaxFF force field section number to parameters contained in that section.
+        param_keys: List[List[int]]
+            List of keys mapping to values in the ffield object.
         """
         super().__init__()
         self.dft_energies = tuple(dft_energies)

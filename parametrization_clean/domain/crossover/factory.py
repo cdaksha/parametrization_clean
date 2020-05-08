@@ -23,10 +23,26 @@ class CrossoverFactory:
     REGISTRY = {}
 
     @classmethod
-    def register(cls, algorithm_name: str, mutation_class):
-        """Register a class with a string key."""
-        cls.REGISTRY[algorithm_name] = mutation_class
-        return mutation_class
+    def register(cls, algorithm_name: str, crossover_class):
+        """Register a crossover strategy with a string key. Useful for abstraction and dynamic retrieval
+        of different algorithms in configuration file. Using this factory, one can easily implement a crossover
+        algorithm (ex. MyCrossoverClass) that follows ICrossoverStrategy, then use
+        "CrossoverFactory.register('my_crossover_class_name')"
+        to generate a corresponding string reference for that crossover strategy.
+
+        Parameters
+        ----------
+        algorithm_name: str
+            Name that one wishes to assign to the designated `crossover_class`/algorithm.
+        crossover_class
+            Class that one wishes to associate/register with `algorithm_name`.
+        Returns
+        -------
+        crossover_class
+            Same as the `crossover_class` input parameter.
+        """
+        cls.REGISTRY[algorithm_name] = crossover_class
+        return crossover_class
 
     @classmethod
     def create_executor(cls, algorithm_name: str) -> ICrossoverStrategy:
