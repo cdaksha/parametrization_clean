@@ -20,240 +20,71 @@ from parametrization_clean.domain.adaptation.strategy import IAdaptationStrategy
 from parametrization_clean.domain.cost.strategy import IErrorStrategy
 
 
-class IStrategySettings(metaclass=abc.ABCMeta):
-
-    @property
-    @abc.abstractmethod
-    def selection_strategy(self) -> ISelectionStrategy:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def mutation_strategy(self) -> IMutationStrategy:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def crossover_strategy(self) -> ICrossoverStrategy:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def adaptation_strategy(self) -> IAdaptationStrategy:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def error_strategy(self) -> IErrorStrategy:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def initialization_strategy(self) -> IMutationStrategy:
-        raise NotImplementedError
+class IStrategySettings(metaclass=abc.ABC):
+    selection_strategy: ISelectionStrategy = NotImplemented
+    mutation_strategy: IMutationStrategy = NotImplemented
+    crossover_strategy: ICrossoverStrategy = NotImplemented
+    adaptation_strategy: IAdaptationStrategy = NotImplemented
+    error_strategy: IErrorStrategy = NotImplemented
+    initialization_strategy: IMutationStrategy = NotImplemented
 
 
-class IGeneticAlgorithmSettings(metaclass=abc.ABCMeta):
-
-    @property
-    @abc.abstractmethod
-    def population_size(self) -> int:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def mutation_rate(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def crossover_rate(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def use_elitism(self) -> bool:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def use_adaptation(self) -> bool:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def use_neural_network(self) -> bool:
-        raise NotImplementedError
+class IGeneticAlgorithmSettings(metaclass=abc.ABC):
+    population_size: int = NotImplemented
+    mutation_rate: float = NotImplemented
+    crossover_rate: float = NotImplemented
+    use_elitism: bool = NotImplemented
+    use_adaptation: bool = NotImplemented
+    use_neural_network: bool = NotImplemented
 
 
-class IMutationSettings(metaclass=abc.ABCMeta):
+class IMutationSettings(metaclass=abc.ABC):
+    gauss_std: List[float] = NotImplemented
+    gauss_frac: List[float] = NotImplemented
 
-    @property
-    @abc.abstractmethod
-    def gauss_std(self) -> List[float]:
-        raise NotImplementedError
+    nakata_rand_lower: float = NotImplemented
+    nakata_rand_higher: float = NotImplemented
+    nakata_scale: float = NotImplemented
 
-    @property
-    @abc.abstractmethod
-    def gauss_frac(self) -> List[float]:
-        raise NotImplementedError
+    polynomial_eta: float = NotImplemented
 
-    @property
-    @abc.abstractmethod
-    def nakata_rand_lower(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def nakata_rand_higher(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def nakata_scale(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def polynomial_eta(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def param_bounds(self):
-        raise NotImplementedError
+    param_bounds: List[List[float]] = NotImplemented
 
 
-class ICrossoverSettings(metaclass=abc.ABCMeta):
-
-    @property
-    @abc.abstractmethod
-    def dpx_alpha(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def dpx_beta(self) -> float:
-        raise NotImplementedError
+class ICrossoverSettings(metaclass=abc.ABC):
+    dpx_alpha: float = NotImplemented
+    dpx_beta: float = NotImplemented
 
 
-class ISelectionSettings(metaclass=abc.ABCMeta):
-
-    @property
-    @abc.abstractmethod
-    def tournament_size(self) -> int:
-        raise NotImplementedError
+class ISelectionSettings(metaclass=abc.ABC):
+    tournament_size: int = NotImplemented
 
 
-class IAdaptationSettings(metaclass=abc.ABCMeta):
+class IAdaptationSettings(metaclass=abc.ABC):
+    srinivas_k1: float = NotImplemented
+    srinivas_k2: float = NotImplemented
+    srinivas_k3: float = NotImplemented
+    srinivas_k4: float = NotImplemented
+    srinivas_default_mutation_rate: float = NotImplemented
 
-    @property
-    @abc.abstractmethod
-    def srinivas_k1(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def srinivas_k2(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def srinivas_k3(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def srinivas_k4(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def srinivas_default_mutation_rate(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def xiao_min_crossover_rate(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def xiao_min_mutation_rate(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def xiao_scale(self) -> float:
-        raise NotImplementedError
+    xiao_min_crossover_rate: float = NotImplemented
+    xiao_min_mutation_rate: float = NotImplemented
+    xiao_scale: float = NotImplemented
 
 
-class INeuralNetSettings(metaclass=abc.ABCMeta):
-
-    @property
-    @abc.abstractmethod
-    def verbosity(self) -> int:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def train_fraction(self) -> float:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def num_epochs(self) -> int:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def num_populations_to_train_on(self) -> int:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def num_nested_ga_iterations(self) -> int:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def minimum_validation_r_squared(self) -> float:
-        raise NotImplementedError
+class INeuralNetSettings(metaclass=abc.ABC):
+    verbosity: int = NotImplemented
+    train_fraction: float = NotImplemented
+    num_epochs: int = NotImplemented
+    num_populations_to_train_on: int = NotImplemented
+    num_nested_ga_iterations: int = NotImplemented
+    minimum_validation_r_squared: float = NotImplemented
 
 
-class IAllSettings(metaclass=abc.ABCMeta):
-
-    @property
-    @abc.abstractmethod
-    def strategy_settings(self) -> IStrategySettings:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def ga_settings(self) -> IGeneticAlgorithmSettings:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def mutation_settings(self) -> IMutationSettings:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def crossover_settings(self) -> ICrossoverSettings:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def selection_settings(self) -> ISelectionSettings:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def adaptation_settings(self) -> IAdaptationSettings:
-        raise NotImplementedError
-
-    @property
-    @abc.abstractmethod
-    def neural_net_settings(self) -> INeuralNetSettings:
-        raise NotImplementedError
+class IAllSettings(metaclass=abc.ABC):
+    strategy_settings: IStrategySettings = NotImplemented
+    ga_settings: IGeneticAlgorithmSettings = NotImplemented
+    mutation_settings: IMutationSettings = NotImplemented
+    crossover_settings: ICrossoverSettings = NotImplemented
+    selection_settings: ISelectionSettings = NotImplemented
+    neural_net_settings: INeuralNetSettings = NotImplemented

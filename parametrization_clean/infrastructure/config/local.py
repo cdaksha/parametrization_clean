@@ -50,27 +50,27 @@ class UserSettings(DefaultSettings):
             else:
                 factory_name = key.capitalize() + "Factory"
 
-            attribute_name = "_" + key + "_strategy"
+            attribute_name = key + "_strategy"
             factory = getattr(sys.modules[__name__], factory_name)
-            setattr(self._strategy_settings, attribute_name, factory.create_executor(value))
+            setattr(self.strategy_settings, attribute_name, factory.create_executor(value))
 
     def set_ga_settings(self, ga_settings_dict):
-        self.set_attributes_from_json(self._ga_settings, ga_settings_dict)
+        self.set_attributes_from_json(self.ga_settings, ga_settings_dict)
 
     def set_mutation_settings(self, mutation_settings_dict):
-        self.set_attributes_from_json(self._mutation_settings, mutation_settings_dict)
+        self.set_attributes_from_json(self.mutation_settings, mutation_settings_dict)
 
     def set_crossover_settings(self, crossover_settings_dict):
-        self.set_attributes_from_json(self._crossover_settings, crossover_settings_dict)
+        self.set_attributes_from_json(self.crossover_settings, crossover_settings_dict)
 
     def set_selection_settings(self, selection_settings_dict):
-        self.set_attributes_from_json(self._selection_settings, selection_settings_dict)
+        self.set_attributes_from_json(self.selection_settings, selection_settings_dict)
 
     def set_adaptation_settings(self, adaptation_settings_dict):
-        self.set_attributes_from_json(self._adaptation_settings, adaptation_settings_dict)
+        self.set_attributes_from_json(self.adaptation_settings, adaptation_settings_dict)
 
     def set_neural_net_settings(self, neural_net_settings_dict):
-        self.set_attributes_from_json(self._neural_net_settings, neural_net_settings_dict)
+        self.set_attributes_from_json(self.neural_net_settings, neural_net_settings_dict)
 
     @staticmethod
     def set_attributes_from_json(config_object, json_dict):
