@@ -4,9 +4,9 @@
 # 3rd party packages
 
 # Local source
-from domain.adaptation.factory import AdaptationFactory
-from domain.adaptation.xiao import XiaoAdapt
-from domain.adaptation.srinivas import SrinivasAdapt
+from parametrization_clean.domain.adaptation.factory import AdaptationFactory
+from parametrization_clean.domain.adaptation.xiao import XiaoAdapt
+from parametrization_clean.domain.adaptation.srinivas import SrinivasAdapt
 
 
 def test_get_xiao_adaptation():

@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from domain.cost.strategy import IErrorStrategy
+from parametrization_clean.domain.cost.strategy import IErrorStrategy
 
 
 class ErrorFactory:

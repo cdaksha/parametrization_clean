@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from domain.crossover.strategy import ICrossoverStrategy
+from parametrization_clean.domain.crossover.strategy import ICrossoverStrategy
 
 
 class CrossoverFactory:

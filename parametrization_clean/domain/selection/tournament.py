@@ -8,9 +8,9 @@ import random
 
 
 # Local source
-from domain.selection.strategy import ISelectionStrategy
-from domain.selection.factory import SelectionFactory
-from domain.individual import Individual
+from parametrization_clean.domain.selection.strategy import ISelectionStrategy
+from parametrization_clean.domain.selection.factory import SelectionFactory
+from parametrization_clean.domain.individual import Individual
 
 
 @SelectionFactory.register('tournament')

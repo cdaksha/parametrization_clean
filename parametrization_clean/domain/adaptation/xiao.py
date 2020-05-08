@@ -8,8 +8,8 @@ import math
 
 
 # Local source
-from domain.adaptation.strategy import IAdaptationStrategy
-from domain.adaptation.factory import AdaptationFactory
+from parametrization_clean.domain.adaptation.strategy import IAdaptationStrategy
+from parametrization_clean.domain.adaptation.factory import AdaptationFactory
 
 
 @AdaptationFactory.register('xiao')

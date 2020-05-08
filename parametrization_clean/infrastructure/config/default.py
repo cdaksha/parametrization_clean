@@ -7,20 +7,20 @@ from typing import List
 # 3rd party packages
 
 # Local source
-from domain.selection.tournament import TournamentSelect
-from domain.mutation.gauss import GaussianMutate
-from domain.crossover.double_pareto import DoubleParetoCross
-from domain.adaptation.xiao import XiaoAdapt
-from domain.cost.reax_error import ReaxError
-from domain.mutation.nakata import NakataMutate
-from use_case.port.settings_repository import (IStrategySettings,
-                                               IGeneticAlgorithmSettings,
-                                               IMutationSettings,
-                                               ICrossoverSettings,
-                                               ISelectionSettings,
-                                               IAdaptationSettings,
-                                               INeuralNetSettings,
-                                               IAllSettings)
+from parametrization_clean.domain.selection.tournament import TournamentSelect
+from parametrization_clean.domain.mutation.gauss import GaussianMutate
+from parametrization_clean.domain.crossover.double_pareto import DoubleParetoCross
+from parametrization_clean.domain.adaptation.xiao import XiaoAdapt
+from parametrization_clean.domain.cost.reax_error import ReaxError
+from parametrization_clean.domain.mutation.nakata import NakataMutate
+from parametrization_clean.use_case.port.settings_repository import (IStrategySettings,
+                                                                     IGeneticAlgorithmSettings,
+                                                                     IMutationSettings,
+                                                                     ICrossoverSettings,
+                                                                     ISelectionSettings,
+                                                                     IAdaptationSettings,
+                                                                     INeuralNetSettings,
+                                                                     IAllSettings)
 
 
 class DefaultSettings(IAllSettings):

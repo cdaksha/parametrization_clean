@@ -13,11 +13,11 @@ from typing import List
 # 3rd party packages
 
 # Local source
-from domain.selection.strategy import ISelectionStrategy
-from domain.crossover.strategy import ICrossoverStrategy
-from domain.mutation.strategy import IMutationStrategy
-from domain.adaptation.strategy import IAdaptationStrategy
-from domain.cost.strategy import IErrorStrategy
+from parametrization_clean.domain.selection.strategy import ISelectionStrategy
+from parametrization_clean.domain.crossover.strategy import ICrossoverStrategy
+from parametrization_clean.domain.mutation.strategy import IMutationStrategy
+from parametrization_clean.domain.adaptation.strategy import IAdaptationStrategy
+from parametrization_clean.domain.cost.strategy import IErrorStrategy
 
 
 class IStrategySettings(metaclass=abc.ABCMeta):

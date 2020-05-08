@@ -4,11 +4,11 @@
 # 3rd party packages
 
 # Local source
-from domain.mutation.factory import MutationFactory
-from domain.mutation.nakata import NakataMutate
-from domain.mutation.central_uniform import CentralUniformMutate
-from domain.mutation.polynomial import PolynomialMutate
-from domain.mutation.gauss import GaussianMutate
+from parametrization_clean.domain.mutation.factory import MutationFactory
+from parametrization_clean.domain.mutation.nakata import NakataMutate
+from parametrization_clean.domain.mutation.central_uniform import CentralUniformMutate
+from parametrization_clean.domain.mutation.polynomial import PolynomialMutate
+from parametrization_clean.domain.mutation.gauss import GaussianMutate
 
 
 def test_get_nakata():

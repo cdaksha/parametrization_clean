@@ -12,12 +12,12 @@ import json
 # 3rd party packages
 
 # Local source
-from infrastructure.config.default import DefaultSettings
-from domain.selection.factory import SelectionFactory
-from domain.adaptation.factory import AdaptationFactory
-from domain.cost.factory import ErrorFactory
-from domain.crossover.factory import CrossoverFactory
-from domain.mutation.factory import MutationFactory
+from parametrization_clean.infrastructure.config.default import DefaultSettings
+from parametrization_clean.domain.selection.factory import SelectionFactory
+from parametrization_clean.domain.adaptation.factory import AdaptationFactory
+from parametrization_clean.domain.cost.factory import ErrorFactory
+from parametrization_clean.domain.crossover.factory import CrossoverFactory
+from parametrization_clean.domain.mutation.factory import MutationFactory
 
 
 # TODO: Need a way to set param bounds, which is required for central uniform mutation

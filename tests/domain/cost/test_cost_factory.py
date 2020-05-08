@@ -4,8 +4,8 @@
 # 3rd party packages
 
 # Local source
-from domain.cost.factory import ErrorFactory
-from domain.cost.reax_error import ReaxError
+from parametrization_clean.domain.cost.factory import ErrorFactory
+from parametrization_clean.domain.cost.reax_error import ReaxError
 
 
 def test_get_reax_error():

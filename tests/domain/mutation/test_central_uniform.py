@@ -5,7 +5,7 @@
 import pytest
 
 # Local source
-from domain.mutation.central_uniform import CentralUniformMutate
+from parametrization_clean.domain.mutation.central_uniform import CentralUniformMutate
 from tests.domain.crossover.test_double_pareto import get_root_individual
 
 

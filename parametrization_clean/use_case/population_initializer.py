@@ -10,9 +10,9 @@ from typing import List
 # 3rd party packages
 
 # Local source
-from domain.individual import Individual
-from use_case.port.population_repository import IPopulationRepository
-from use_case.port.settings_repository import IAllSettings
+from parametrization_clean.domain.individual import Individual
+from parametrization_clean.use_case.port.population_repository import IPopulationRepository
+from parametrization_clean.use_case.port.settings_repository import IAllSettings
 
 
 class PopulationInitializer(object):
@@ -24,6 +24,7 @@ class PopulationInitializer(object):
         self.mutation_settings_dict = vars(settings_repository.mutation_settings)
 
     def execute(self) -> List[Individual]:
+        # TODO: Population initialization shouldn't require dft energies, weights (ex. info from fort.99)
         root_individual = self.population_repository.get_root_individual()
         individual = Individual.from_root_individual(root_individual)
         population = [self.strategy.mutation(individual, root_individual, **self.mutation_settings_dict)

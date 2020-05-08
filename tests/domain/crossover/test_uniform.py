@@ -7,7 +7,7 @@ import pytest
 import numpy as np
 
 # Local source
-from domain.crossover.uniform import UniformCross
+from parametrization_clean.domain.crossover.uniform import UniformCross
 from tests.domain.crossover.test_double_pareto import get_root_individual
 
 

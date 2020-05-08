@@ -4,11 +4,11 @@
 # 3rd party packages
 
 # Local source
-from domain.crossover.factory import CrossoverFactory
-from domain.crossover.single_point import SinglePointCross
-from domain.crossover.two_point import TwoPointCross
-from domain.crossover.uniform import UniformCross
-from domain.crossover.double_pareto import DoubleParetoCross
+from parametrization_clean.domain.crossover.factory import CrossoverFactory
+from parametrization_clean.domain.crossover.single_point import SinglePointCross
+from parametrization_clean.domain.crossover.two_point import TwoPointCross
+from parametrization_clean.domain.crossover.uniform import UniformCross
+from parametrization_clean.domain.crossover.double_pareto import DoubleParetoCross
 
 
 def test_get_single_point():

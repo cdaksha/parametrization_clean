@@ -14,8 +14,8 @@ from typing import List
 
 
 # Local source
-from domain.root_individual import RootIndividual
-from domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
+from parametrization_clean.domain.individual import Individual
 
 
 class IPopulationRepository(metaclass=abc.ABCMeta):

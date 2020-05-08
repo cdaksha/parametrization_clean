@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from domain.selection.strategy import ISelectionStrategy
+from parametrization_clean.domain.selection.strategy import ISelectionStrategy
 
 
 class SelectionFactory:

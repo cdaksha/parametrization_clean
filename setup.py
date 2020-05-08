@@ -9,7 +9,9 @@ from setuptools import setup, find_packages
 with open("README.md", 'r') as readme_file:
     readme = readme_file.read()
 
-requirements = []
+requirements = [
+    # TODO: Put package requirements here
+]
 
 setup_requirements = ['pytest-runner', ]
 
@@ -45,6 +47,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/cdaksha/parametrization_clean',
-    version='1.0.0.8',
+    version='1.0.0.9.9.1',
     zip_safe=False,
 )

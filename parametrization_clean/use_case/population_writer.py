@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from use_case.port.population_repository import IPopulationRepository
+from parametrization_clean.use_case.port.population_repository import IPopulationRepository
 
 
 class PopulationWriter:

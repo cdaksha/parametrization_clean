@@ -7,10 +7,10 @@ import random
 # 3rd party packages
 
 # Local source
-from domain.crossover.strategy import ICrossoverStrategy
-from domain.crossover.factory import CrossoverFactory
-from domain.individual import Individual
-from domain.root_individual import RootIndividual
+from parametrization_clean.domain.crossover.strategy import ICrossoverStrategy
+from parametrization_clean.domain.crossover.factory import CrossoverFactory
+from parametrization_clean.domain.individual import Individual
+from parametrization_clean.domain.root_individual import RootIndividual
 
 
 @CrossoverFactory.register('double_pareto')

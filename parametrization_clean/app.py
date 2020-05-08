@@ -9,12 +9,12 @@ using ReaxFF.
 # 3rd party packages
 
 # Local source
-from use_case.population_initializer import PopulationInitializer
-from use_case.population_propagator import PopulationPropagator
-from use_case.population_writer import PopulationWriter
-from infrastructure.config.local import UserSettings
-from infrastructure.repository.from_files import PopulationFileRepository
-from infrastructure.presenter.file_writer import DataWriter
+from parametrization_clean.use_case.population_initializer import PopulationInitializer
+from parametrization_clean.use_case.population_propagator import PopulationPropagator
+from parametrization_clean.use_case.population_writer import PopulationWriter
+from parametrization_clean.infrastructure.config.local import UserSettings
+from parametrization_clean.infrastructure.repository.from_files import PopulationFileRepository
+from parametrization_clean.infrastructure.presenter.file_writer import DataWriter
 
 
 def run_application(generation_number, training_path, population_path, config_path):

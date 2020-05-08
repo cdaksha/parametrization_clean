@@ -7,7 +7,7 @@
 # 3rd party packages
 
 # Local source
-from domain.mutation.strategy import IMutationStrategy
+from parametrization_clean.domain.mutation.strategy import IMutationStrategy
 
 
 class MutationFactory:
