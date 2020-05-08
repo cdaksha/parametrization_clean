@@ -11,11 +11,17 @@ ReaxFF optimizations.
 
 ## Getting Started
 
+As with all work flows, **it is a good idea
+to work within a Python virtual environment** to create an isolated environment for this Python project.
+[This](https://docs.python.org/3/tutorial/venv.html) source contains a good tutorial on how to setup a virtual
+environment. Another source for help with Python virtual environments is
+[here](https://docs.python-guide.org/dev/virtualenvs/).
+
 The project files are available as a GitHub repository [here](https://github.com/cdaksha/parametrization_clean).
-The project can also be accessed through PyPi [here](https://pypi.org/project/parametrization-clean-cdaksha/1.0.0/);
+The project can also be accessed through PyPi [here](https://pypi.org/project/parametrization-clean-cdaksha/);
 the corresponding pip installation command is
 
-```
+```commandline
 $pip install parametrization-clean-cdaksha
 ```
 
@@ -25,7 +31,7 @@ conda is not available, then the required packages for running the application a
 
 After installing the package with pip, the current implementation supports a command-line interface with usage
 
-```
+```commandline
 $cli --g GENERATION_NUMBER --t TRAINING_PATH --p POPULATION_PATH --c CONFIG_PATH
 ```
 
@@ -66,6 +72,19 @@ generational genetic algorithm until a threshold, defined by a maximum generatio
 Again, note that several options are provided for potential mutation, crossover, etc., algorithms that the user may use.
 Reasonable defaults based on the literature are provided, but they are easy to override by defining the custom
 `config.json` file and providing the location to the command line interface, as suggested earlier.
+
+### Dependencies
+
+Through PyPI, the installation should already come with NumPy, Pandas, and Click. **TensorFlow 2.0 is used for building,
+training, and using the feed forward neural network, but is NOT automatically installed.** This is because the
+application can run without TensorFlow, as long as the option to "use_neural_network" is not *true*, allowing
+for compatibility with systems that cannot use TF 2.0. However, those who wish to utilize the neural network can run
+
+```commandline
+$pip install -r requirements/prod.txt
+```
+
+which will check and install all required modules as listed in the `requirements/prod.txt` file, including TensorFlow.
 
 ### Prerequisites
 

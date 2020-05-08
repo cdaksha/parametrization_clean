@@ -10,7 +10,10 @@ with open("README.md", 'r') as readme_file:
     readme = readme_file.read()
 
 requirements = [
-    # TODO: Put package requirements here
+    # Note that TensorFlow isn't put here - install TensorFlow if you wish to use Neural Network!
+    'numpy',
+    'pandas',
+    'Click'
 ]
 
 setup_requirements = ['pytest-runner', ]
