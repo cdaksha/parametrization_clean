@@ -16,3 +16,9 @@ History
 * Added example JSON and wrapper bash script
 * Refactored factory design patterns used for picking algorithms
 
+1.0.1.4 (2020-05-09)
+------------------
+
+* Added Sphinx-compliant documentation throughout code
+* Added example job used for supercomputer
+

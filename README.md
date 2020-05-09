@@ -65,9 +65,17 @@ for evaluation of the parameters. If *GENERATION_NUMBER* > 1, the previous gener
 *POPULATION_PATH*, and classic genetic operators are applied to generate the next generation and output to the
 *POPULATION_PATH* once again, after which the corresponding ReaxFF optimizations may be submitted.
 
-To automate the generational genetic algorithm, an example slurm script is provided in the `example` directory
+To automate the generational genetic algorithm, an example bash script is provided in the `example` directory
 [here](example/main.sh). This allows concurrent submission of ReaxFF optimizations and continuation of the
-generational genetic algorithm until a threshold, defined by a maximum generation number, is reached.
+generational genetic algorithm until a threshold, defined by a maximum generation number, is reached. In practice,
+this example simply uses this Python application to propagate the genetic algorithm from one generation to the next,
+then submits ReaxFF optimizations for those created individuals, monitoring their completion. After the generation
+is completed (based on job completion status), the cycle repeats.
+
+In practice, this application lends itself to usage with supercomputing. The corresponding supercomputing job for
+a SLURM-based environment is also available [here](example/job.qs). This wrapper SLURM script merely calls the bash
+script, but makes it so that the user does not need to keep the bash script job running on their own computer; instead,
+the bash script will be running on a node in the supercomputer.
 
 Again, note that several options are provided for potential mutation, crossover, etc., algorithms that the user may use.
 Reasonable defaults based on the literature are provided, but they are easy to override by defining the custom

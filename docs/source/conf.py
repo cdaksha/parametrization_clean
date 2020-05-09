@@ -43,7 +43,7 @@ release = parametrization_clean.__version__
 # ones.
 extensions = ['sphinx.ext.autodoc', 
 'sphinx.ext.viewcode',
-'sphinx.ext.napoleon',
+'sphinx.ext.napoleon'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,3 +71,8 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# If true, the current module name will be prepended to all description
+# unit titles (such as .. function::).
+add_module_names = False
+

@@ -1,7 +1,38 @@
 #!/usr/bin/env python
 
 """Contains default config classes with default parameters used for genetic algorithm/neural network, based on the
-settings repository port.
+settings repository port. Note that the attributes implemented map one-to-one with the corresponding JSON key
+that would be expected from the user config, if specified. For example, at the highest level, DefaultSettings
+is composed of `strategy_settings`, `ga_settings`, ..., `neural_net_settings`. Settings for each of those attributes
+would be specified in the JSON as following:
+
+{
+    "strategy_settings": {
+        ...
+    },
+    "ga_settings": {
+        ...
+    },
+    ...
+    "neural_net_settings": {
+        ...
+    }
+}
+
+For each of those keys in the JSON, then, the corresponding attributes also map directly to the JSON key names expected.
+For example, `ga_settings` represents an implementation of IGeneticAlgorithmSettings, which expects several attributes:
+`population_size`, `mutation_rate`, `crossover_rate`, and so on. If the user wishes to change, for example, the
+population size, their JSON configuration file might look like
+
+{
+    "ga_settings": {
+        "population_size": 100
+    }
+}
+
+The user can choose to override as many of the existing attributes as they wish, but reasonable defaults are provided
+for the adaptation, selection, crossover, and mutation algorithms, as well as for the neural network. However, IT IS
+HIGHLY RECOMMENDED TO SET, AT THE VERY LEAST, THE POPULATION SIZE OF THE GENETIC ALGORITHM BASED ON THE USER'S DESIRES.
 """
 
 # Standard library

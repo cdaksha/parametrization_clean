@@ -19,8 +19,13 @@ class MutationFactory:
     Classes that implement IMutationStrategy can be registered and utilized through this factory's registry.
     """
 
-    # Internal registry for available crossover methods
     REGISTRY = {}
+    """Internal registry for available mutation methods. Users can specify from one of the
+    `algorithm_name` strings available in the dictionary, mapping `algorithm_name` to the corresponding class
+    implementing that algorithm.
+    For example, "gauss" maps to the multi-factor Gaussian algorithm;
+    users can specify the `mutation_strategy` in the user config.json file to use this algorithm.
+    """
 
     @classmethod
     def register(cls, algorithm_name: str, mutation_class):

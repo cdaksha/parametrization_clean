@@ -19,8 +19,13 @@ class CrossoverFactory:
     Classes that implement ICrossoverStrategy can be registered and utilized through this factory's registry.
     """
 
-    # Internal registry for available crossover methods
     REGISTRY = {}
+    """Internal registry for available crossover methods. Users can specify from one of the
+    `algorithm_name` strings available in the dictionary, mapping `algorithm_name` to the corresponding class
+    implementing that algorithm.
+    For example, "single_point" maps to the single point crossover algorithm (for real-valued GAs);
+    users can specify the `crossover_strategy` in the user config.json file to use this algorithm.
+    """
 
     @classmethod
     def register(cls, algorithm_name: str, crossover_class):

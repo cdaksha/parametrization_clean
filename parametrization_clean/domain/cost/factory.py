@@ -16,8 +16,13 @@ class ErrorFactory:
     Classes that implement IErrorStrategy can be registered and utilized through this factory's registry.
     """
 
-    # Internal registry for available crossover methods
     REGISTRY = {}
+    """Internal registry for available error calculation methods. Users can specify from one of the
+    `algorithm_name` strings available in the dictionary, mapping `algorithm_name` to the corresponding class
+    implementing that algorithm.
+    For example, "reax_error" maps to the ReaxFF error calculation algorithm;
+    users can specify the `error_strategy` in the user config.json file to use this algorithm.
+    """
 
     @classmethod
     def register(cls, algorithm_name: str, error_calculator_class):

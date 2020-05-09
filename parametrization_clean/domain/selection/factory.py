@@ -16,8 +16,15 @@ class SelectionFactory:
     Classes that implement ISelectionStrategy can be registered and utilized through this factory's registry.
     """
 
-    # Internal registry for available crossover methods
     REGISTRY = {}
+    """Internal registry for available selection methods. Users can specify from one of the
+    `algorithm_name` strings available in the dictionary, mapping `algorithm_name` to the corresponding class
+    implementing that algorithm.
+    For example, "tournament" maps to the Tournament selection algorithm;
+    users can specify the `selection_strategy` in the user config.json file to use this algorithm.
+
+    CURRENTLY, ONLY THE TOURNAMENT SELECTION ALGORITHM HAS BEEN IMPLEMENTED AND IS SUPPORTED.
+    """
 
     @classmethod
     def register(cls, algorithm_name: str, selection_class):
