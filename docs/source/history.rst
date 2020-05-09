@@ -25,4 +25,4 @@ History
 
 1.0.1.5 (2020-05-09)
 ------------------
-* Added Travis deployment integration
+* More documentation updates
