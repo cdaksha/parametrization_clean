@@ -21,4 +21,8 @@ History
 
 * Added Sphinx-compliant documentation throughout code
 * Added example job used for supercomputer
+* Added typical workflow for proper setup and for running the application
 
+1.0.1.5 (2020-05-09)
+------------------
+* Added Travis deployment integration
