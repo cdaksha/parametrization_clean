@@ -81,6 +81,26 @@ Again, note that several options are provided for potential mutation, crossover,
 Reasonable defaults based on the literature are provided, but they are easy to override by defining the custom
 `config.json` file and providing the location to the command line interface, as suggested earlier.
 
+Thus, the typical setup for usage of this application is as follows:
+  1. Make sure that the application and requirements are properly installed on the machine, as well as
+     standalone ReaxFF.
+  2. Define the user configuration file with any changes to parameters of interest, **or at least the population size**.
+  3. Create a wrapper bash script that automates propagation of generations back-to-back based on the example bash
+     script provided, with proper submission details for the standalone ReaxFF jobs.
+  4. If using supercomputing resources, create a wrapper job script (SLURM, PBS, etc.) that submits the wrapper bash
+     script, configured appropriately based on the environment.
+
+The workflow for running the optimizations is then as follows:
+  1. Make sure the user configuration is set as desired and reconfigure beforehand if necessary.
+  2. Set the reference/training set directory with the required model files:
+     ffield, geo, params, control, trainset.in, and fort.99.
+  3. Set the population output directory, where you wish the generational GA files to be outputted.
+  4. Set the generation number. If this is the very beginning of the run, then the generation number should equal one.
+     If a previous run is being continued, then this generation number should be the last successfully completed
+     generation's number incremented by one.
+  5. Submit the supercomputer job script (SLURM, PBS, etc.).
+  6. Monitor the total error/objective function as the generations go on, as well as any other statistics of interest.
+
 ### Dependencies
 
 Through PyPI, the installation should already come with NumPy, Pandas, and Click. **TensorFlow 2.0 is used for building,
