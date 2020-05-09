@@ -25,6 +25,6 @@ deploy:
   password: "pypi-AgEIcHlwaS5vcmcCJDVmZmU4ZWYxLTYzYTYtNGVkOS04MTg3LTVkODUwODk1ZDEyZgACTnsicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJwYXJhbWV0cml6YXRpb24tY2xlYW4tY2Rha3NoYSJdfSwgInZlcnNpb24iOiAxfQAABiBQRqbyvtRqITvtMCTfHwLl63Wyt4HGImL9Mtj6Mjle9A"
   distributions: "sdist bdist_wheel"
   on:
-    tags: true
+    # tags: true
     branch: master
 
