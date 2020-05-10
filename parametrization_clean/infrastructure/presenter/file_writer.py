@@ -72,11 +72,13 @@ class DataWriter:
         generation_vs_error_file_path = os.path.join(population_path, '00-generation-vs-error.txt')
         neural_network_file_path = os.path.join(population_path, "00-ann-summary")
         if previous_generation_number == 1:
-            # First generation -> initialize files
+            # First generation -> initialize file
             DataWriter.create_or_append("Generation Number, Best Total Error\n", generation_vs_error_file_path)
-            if history:
-                DataWriter.create_or_append("Generation #\t{}\n"
-                                            .format(list(history_dict.keys())), neural_network_file_path)
+
+        if history and previous_generation_number == user_settings.neural_net_settings.num_populations_to_train_on:
+            # First time writing to ANN -> initialize file
+            DataWriter.create_or_append("Generation #\t{}\n"
+                                        .format(list(history_dict.keys())), neural_network_file_path)
 
         best_previous_error = sorted(previous_population)[0].cost
         DataWriter.create_or_append("{},{:.3f}\n".format(previous_generation_number, best_previous_error),

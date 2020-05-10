@@ -109,7 +109,7 @@ def test_write_outputs(file_repository, reax_output_dir_path, presenter_output_p
     previous_generation_number = 1
     file_repository.current_generation_number = 2
     default_settings = DefaultSettings()
-    default_settings.neural_net_settings._num_epochs = 1
+    default_settings.neural_net_settings.num_epochs = 1
 
     summary_file = os.path.join(presenter_output_path, "generation-" + str(previous_generation_number), "00-gen-summary.txt")
     generation_vs_error_file_path = os.path.join(presenter_output_path, '00-generation-vs-error.txt')

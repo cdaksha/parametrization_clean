@@ -31,3 +31,4 @@ History
 --------------------
 * Slight refactoring of nested GA + neural network loop:
   top two parents from master GA will remain now remain untampered throughout nested GA iterations
+* Slight refactoring of ANN summary output
