@@ -17,12 +17,17 @@ History
 * Refactored factory design patterns used for picking algorithms
 
 1.0.1.4 (2020-05-09)
-------------------
+--------------------
 
 * Added Sphinx-compliant documentation throughout code
 * Added example job used for supercomputer
 * Added typical workflow for proper setup and for running the application
 
 1.0.1.5 (2020-05-09)
-------------------
+--------------------
 * More documentation updates
+
+1.0.1.6 (2020-05-10)
+--------------------
+* Slight refactoring of nested GA + neural network loop:
+  top two parents from master GA will remain now remain untampered throughout nested GA iterations

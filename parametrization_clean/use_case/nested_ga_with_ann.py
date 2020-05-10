@@ -53,8 +53,7 @@ class GeneticNeuralNetPropagator:
 
     def run_with_ann(self, parents, model):
         next_generation, best_master_parents = self.propagate_first(parents, model)
-        next_generation = self.propagate_remaining(next_generation, model)
-        final_generation = self.generate_final_population(next_generation, best_master_parents)
+        final_generation = self.propagate_remaining(next_generation, model)
         return final_generation
 
     def final_ann_accuracy_is_poor(self, history):
@@ -75,17 +74,13 @@ class GeneticNeuralNetPropagator:
         return next_generation, best_master_parents
 
     def propagate_remaining(self, population: List[Individual], model) -> List[Individual]:
-        """Run remaining nested genetic algorithm iterations."""
+        """Run remaining nested genetic algorithm iterations. Preserve best two parents from master GA."""
         next_generation = population
         for i in range(self.neural_net_settings.num_nested_ga_iterations):
             next_generation = self.population_propagator.execute(next_generation)
-            y_predicted = self.neural_net.predict_outputs(model, next_generation)
-            self.update_costs(next_generation, y_predicted)
+            y_predicted = self.neural_net.predict_outputs(model, next_generation[2:])
+            self.update_costs(next_generation[2:], y_predicted)
         return next_generation
-
-    def generate_final_population(self, population: List[Individual], best_master_parents: List[Individual]):
-        sorted_by_cost_population = sorted(population)
-        return best_master_parents + sorted_by_cost_population[0:(self.population_size - 2)]
 
     def update_costs(self, population: List[Individual], y_predicted):
         costs = self.neural_net.compute_costs(y_predicted, self.root_individual, self.error_strategy)

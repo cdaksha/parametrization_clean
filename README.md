@@ -122,12 +122,12 @@ are required. At the very least, the training set directory must contain
 
 ```
 training_files
-│---ffield
-│---geo
-│---params
-│---control
-│---trainset.in
-│---fort.99
+|---ffield
+|---geo
+|---params
+|---control
+|---trainset.in
+|---fort.99
 ```
 
 Note that `iopt` files are dynamically created with a single line entry, *0*, to instruct ReaxFF not to use the "manual"
