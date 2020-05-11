@@ -39,7 +39,8 @@ where *GENERATION_NUMBER* is the current generation number in the generational g
 is the file path location of the reference ReaxFF training set files, *POPULATION_PATH* is the location at which
 the user wishes the generational genetic algorithm files to be outputted, and *CONFIG_PATH* is the location at which
 a user-defined JSON configuration file can be entered. The last field is not required, as defaults are provided for
-each algorithm and genetic algorithm setting.
+each algorithm and genetic algorithm setting. If the last field is specified, a valid user configuration JSON file
+is assumed to exist at the *CONFIG_PATH* location.
 
 All options used in the default configuration are shown in the `example` folder [here](example/config.json). The user
 can tune one (or many) of these parameters by defining a config.json file at the *CONFIG_PATH* location, such as the
