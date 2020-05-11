@@ -14,3 +14,7 @@ class ApplicationError(Exception):
     pass
 
 
+class ConfigurationError(ApplicationError):
+    """Error with user configuration file provided."""
+    pass
+

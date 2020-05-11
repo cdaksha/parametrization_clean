@@ -12,6 +12,7 @@ import json
 
 # Local source
 from parametrization_clean.infrastructure.config.default import DefaultSettings
+from parametrization_clean.infrastructure.exception.exception import ConfigurationError
 # Note: the following imports are required so that python can use the relevant algorithm factory in finding the
 # user-requested algorithm
 from parametrization_clean.domain.selection.factory import SelectionFactory
@@ -31,7 +32,10 @@ class UserSettings(DefaultSettings):
             with open(user_config_file_path, 'r') as in_file:
                 all_settings_dict = json.load(in_file)
             self.build_from(all_settings_dict)
-        except (FileNotFoundError, json.JSONDecodeError):
+        except json.JSONDecodeError:
+            raise ConfigurationError("ERROR parsing JSON configuration file at {}."
+                                     "Please double check the file and try again.".format(user_config_file_path))
+        except FileNotFoundError:
             # No configuration file provided - using default config values
             # TODO: LOG
             pass
@@ -78,6 +82,5 @@ class UserSettings(DefaultSettings):
     def set_attributes_from_json(config_object, json_dict):
         """Extract and set class attributes from JSON dictionary object."""
         for key, value in json_dict.items():
-            # adding underscore as each attribute is stored as protected property
             attribute_name = key
             setattr(config_object, attribute_name, value)
