@@ -37,3 +37,8 @@ History
 --------------------
 * Slight refactoring of ANN summary output once more
 * Added more documentation to README
+
+1.0.1.8 (2020-05-11)
+--------------------
+* Slight refactoring of error handling for user JSON configuration passed as input
+* Addition of configuration specific exception class
