@@ -135,6 +135,10 @@ ReaxFF parameter optimization scheme: successful one parameter parabolic extrapo
 
 Currently, `fort.99` is required in the training set directory to retrieve DFT energies and weights in the beginning.
 
+Note that more information on the ReaxFF files and required setup for optimization can be found in the ReaxFF User
+Manual from the lead developer, Dr. Duin. More information about ReaxFF itself can be found by first looking at
+Dr. Duin's first paper, *ReaxFF: A Reactive Force Field for Hydrocarbons*, and going from there.
+
 ## Running the tests
 
 The project can easily be tested by running the test suite through

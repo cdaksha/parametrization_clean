@@ -32,3 +32,8 @@ History
 * Slight refactoring of nested GA + neural network loop:
   top two parents from master GA will remain now remain untampered throughout nested GA iterations
 * Slight refactoring of ANN summary output
+
+1.0.1.7 (2020-05-11)
+--------------------
+* Slight refactoring of ANN summary output once more
+* Added more documentation to README
