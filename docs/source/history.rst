@@ -42,3 +42,8 @@ History
 --------------------
 * Slight refactoring of error handling for user JSON configuration passed as input
 * Addition of configuration specific exception class
+
+1.0.1.8 (2020-05-11)
+--------------------
+* Fixed ANN summary output
+* Added exception handling for when ffield file has merged columns

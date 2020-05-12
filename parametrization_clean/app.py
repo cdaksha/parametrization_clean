@@ -53,7 +53,8 @@ def run_application(generation_number, training_path, population_path, config_pa
         previous_population, successfully_retrieved_case_numbers = \
             population_repository.get_population(previous_generation_number)
 
-        enough_generations_elapsed = generation_number >= user_settings.neural_net_settings.num_populations_to_train_on
+        enough_generations_elapsed = (previous_generation_number >=
+                                      user_settings.neural_net_settings.num_populations_to_train_on)
         use_neural_network = user_settings.ga_settings.use_neural_network
         if use_neural_network and enough_generations_elapsed:
             from parametrization_clean.use_case.nested_ga_with_ann import GeneticNeuralNetPropagator

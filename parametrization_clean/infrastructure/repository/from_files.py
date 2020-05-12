@@ -96,6 +96,10 @@ class PopulationFileRepository(IPopulationRepository):
                 # 'fort.99' file does not exist
                 print("fort.99 not found in '{}'...continuing to next case".format(child_dir))
                 continue
+            except ValueError:
+                # Invalid number of columns in fort.99 -> skip and continue to next case
+                # TODO: Log
+                continue
 
         return population, successfully_retrieved_case_numbers
 
