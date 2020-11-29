@@ -47,3 +47,8 @@ History
 --------------------
 * Fixed ANN summary output
 * Added exception handling for when ffield file has merged columns
+
+1.0.2.1 (2020-11-29)
+--------------------
+* Removed requirement of fort.99 in the training set - now populates fort99 data in the Root Individual
+  by finding a valid case from the first generation

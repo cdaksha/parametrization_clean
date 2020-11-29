@@ -23,7 +23,7 @@ import shutil
 
 # Local source
 from parametrization_clean.domain.individual import Individual
-from parametrization_clean.domain.root_individual import RootIndividual
+from parametrization_clean.domain.root_individual import RootIndividual, FirstGenerationRootIndividual
 from parametrization_clean.domain.cost.reax_error import ReaxError
 from parametrization_clean.domain.utils.helpers import get_param
 from parametrization_clean.use_case.port.population_repository import IPopulationRepository
@@ -60,13 +60,21 @@ class PopulationFileRepository(IPopulationRepository):
 
     def get_root_individual(self) -> RootIndividual:
         root_ffield, _ = self.training_reax_reader.read_ffield()
-        fort99_data = self.training_reax_reader.read_fort99()
 
-        # TODO: PROBLEM - First generation also requires 'fort.99' to be present in training file directory!
-        fort99_extractor = Fort99Extractor(fort99_data)
-        dft_energies = fort99_extractor.get_dft_energies()
-        weights = fort99_extractor.get_weights()
-        return RootIndividual(dft_energies, weights, root_ffield, self.param_keys)
+        if self.current_generation_number == 1:
+            root_individual = FirstGenerationRootIndividual(root_ffield, self.param_keys)
+        else:
+            # TODO: This should probably be done in a different way
+            # For now, read the data from generation-1/child-0/fort.99 so that we don't need fort.99 in the input file
+            fort99_data = self.__find_valid_initial_fort99()
+
+            fort99_extractor = Fort99Extractor(fort99_data)
+            dft_energies = fort99_extractor.get_dft_energies()
+            weights = fort99_extractor.get_weights()
+
+            root_individual = RootIndividual(dft_energies, weights, root_ffield, self.param_keys)
+
+        return root_individual
 
     def get_population(self, generation_number: int) -> Tuple[List[Individual], List[int]]:
         generation_dir_path = os.path.join(self.population_path, self.GENERATION_FOLDER_PREFIX + str(generation_number))
@@ -185,3 +193,22 @@ class PopulationFileRepository(IPopulationRepository):
             generation_population, _ = self.get_population(generation_number)
             population.extend(generation_population)
         return population
+
+    def __find_valid_initial_fort99(self) -> List:
+        generation_dir_path = os.path.join(self.population_path, self.GENERATION_FOLDER_PREFIX + "1")
+
+        fort99_data = []
+        for case_number in range(self.population_size):
+            child_dir = os.path.join(generation_dir_path, self.INDIVIDUAL_FOLDER_PREFIX + str(case_number))
+            self.training_reax_reader.dir_path = child_dir
+
+            try:
+                fort99_data = self.training_reax_reader.read_fort99()
+                break
+            except FileNotFoundError:
+                continue
+            except ValueError:
+                # Invalid number of columns in fort.99 -> skip and continue to next case
+                continue
+
+        return fort99_data

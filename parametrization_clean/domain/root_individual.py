@@ -51,3 +51,19 @@ class RootIndividual(Borg):
 
     def extract_params(self) -> List[float]:
         return [get_param(key, self.root_ffield) for key in self.param_keys]
+
+
+class FirstGenerationRootIndividual(RootIndividual):
+
+    def __init__(self, root_ffield: Dict[int, List], param_keys: List[List[int]]):
+        """Root individual for the first generation. Does NOT require DFT energies or weights, as they are not
+        necessary for population initialization.
+
+        Parameters
+        ----------
+        root_ffield: Dict[int, List]
+            Dictionary mapping ReaxFF force field section number to parameters contained in that section.
+        param_keys: List[List[int]]
+            List of keys mapping to values in the ffield object.
+        """
+        super().__init__(dft_energies=[], weights=[], root_ffield=root_ffield, param_keys=param_keys)
