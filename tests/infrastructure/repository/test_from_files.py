@@ -9,7 +9,7 @@ import pytest
 
 # Local source
 from parametrization_clean.infrastructure.repository.from_files import PopulationFileRepository
-from parametrization_clean.domain.root_individual import RootIndividual
+from parametrization_clean.domain.root_individual import RootIndividual, FirstGenerationRootIndividual
 from parametrization_clean.infrastructure.utils.response_object import (ResponseSuccess,
                                                   ResponseWarning,
                                                   ResponseFailure)
@@ -32,6 +32,13 @@ def module_setup_teardown(reax_output_dir_path):
 def file_repository(all_settings, training_set_dir_path, reax_output_dir_path):
     return PopulationFileRepository(training_set_dir_path, reax_output_dir_path, all_settings,
                                     current_generation_number=3)
+
+
+@pytest.fixture()
+@pytest.mark.usefixtures("training_set_dir_path", "reax_output_dir_path")
+def first_generation_file_repository(all_settings, training_set_dir_path, reax_output_dir_path):
+    return PopulationFileRepository(training_set_dir_path, reax_output_dir_path, all_settings,
+                                    current_generation_number=1)
 
 
 @pytest.mark.usefixtures("training_set_dir_path", "reax_output_dir_path")
@@ -66,6 +73,17 @@ def test_get_root_individual(reax_io_obj, file_repository):
     assert isinstance(root_individual.root_ffield, dict)
     assert list(root_individual.dft_energies) == dft_energies
     assert list(root_individual.weights) == weights
+    assert root_individual.param_keys == param_keys
+
+
+def test_get_root_individual_first_generation(reax_io_obj, first_generation_file_repository):
+    root_individual = first_generation_file_repository.get_root_individual()
+
+    ffield, _ = reax_io_obj.read_ffield()
+    param_keys, _, _ = reax_io_obj.read_params()
+
+    assert isinstance(root_individual, FirstGenerationRootIndividual)
+    assert isinstance(root_individual.root_ffield, dict)
     assert root_individual.param_keys == param_keys
 
 
