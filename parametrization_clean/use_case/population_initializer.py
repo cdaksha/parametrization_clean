@@ -29,7 +29,6 @@ class PopulationInitializer(object):
         self.mutation_settings_dict = vars(settings_repository.mutation_settings)
 
     def execute(self) -> List[Individual]:
-        # TODO: Population initialization shouldn't require dft energies, weights (ex. info from fort.99)
         root_individual = self.population_repository.get_root_individual()
         individual = Individual.from_root_individual(root_individual)
         population = [self.strategy.mutation(individual, root_individual, **self.mutation_settings_dict)
