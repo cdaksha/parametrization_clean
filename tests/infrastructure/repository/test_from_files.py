@@ -41,6 +41,13 @@ def first_generation_file_repository(all_settings, training_set_dir_path, reax_o
                                     current_generation_number=1)
 
 
+@pytest.fixture()
+@pytest.mark.usefixtures("training_set_dir_path", "reax_output_dir_path")
+def second_generation_file_repository(all_settings, training_set_dir_path, reax_output_dir_path):
+    return PopulationFileRepository(training_set_dir_path, reax_output_dir_path, all_settings,
+                                    current_generation_number=2)
+
+
 @pytest.mark.usefixtures("training_set_dir_path", "reax_output_dir_path")
 def test_file_repository_init(file_repository, all_settings, training_set_dir_path, reax_output_dir_path):
     assert file_repository.training_set_path == Path(training_set_dir_path)
@@ -59,6 +66,33 @@ def test_file_repository_init(file_repository, all_settings, training_set_dir_pa
     os.rmdir(os.path.join(reax_output_dir_path, 'test_output_directory'))
 
 
+def test_get_root_individual_first_generation(reax_io_obj, first_generation_file_repository):
+    root_individual = first_generation_file_repository.get_root_individual()
+
+    ffield, _ = reax_io_obj.read_ffield()
+    param_keys, _, _ = reax_io_obj.read_params()
+
+    assert isinstance(root_individual, FirstGenerationRootIndividual)
+    assert isinstance(root_individual.root_ffield, dict)
+    assert root_individual.param_keys == param_keys
+
+
+def test_get_root_individual_second_generation(reax_io_obj, second_generation_file_repository):
+    if os.path.isdir(second_generation_file_repository.reference_path):
+        shutil.rmtree(second_generation_file_repository.reference_path)
+
+    root_individual = second_generation_file_repository.get_root_individual()
+
+    ffield, _ = reax_io_obj.read_ffield()
+    param_keys, _, _ = reax_io_obj.read_params()
+
+    assert isinstance(root_individual, RootIndividual)
+    assert isinstance(root_individual.root_ffield, dict)
+    assert root_individual.param_keys == param_keys
+    assert os.path.isdir(second_generation_file_repository.reference_path)
+    assert os.path.exists(os.path.join(second_generation_file_repository.reference_path, "fort.99"))
+
+
 def test_get_root_individual(reax_io_obj, file_repository):
     root_individual = file_repository.get_root_individual()
 
@@ -69,21 +103,13 @@ def test_get_root_individual(reax_io_obj, file_repository):
     dft_energies = [row[1] for row in fort99_data]
     weights = [row[2] for row in fort99_data]
 
+    assert os.path.isdir(file_repository.reference_path)
+    assert os.path.exists(os.path.join(file_repository.reference_path, "fort.99"))
+
     assert isinstance(root_individual, RootIndividual)
     assert isinstance(root_individual.root_ffield, dict)
     assert list(root_individual.dft_energies) == dft_energies
     assert list(root_individual.weights) == weights
-    assert root_individual.param_keys == param_keys
-
-
-def test_get_root_individual_first_generation(reax_io_obj, first_generation_file_repository):
-    root_individual = first_generation_file_repository.get_root_individual()
-
-    ffield, _ = reax_io_obj.read_ffield()
-    param_keys, _, _ = reax_io_obj.read_params()
-
-    assert isinstance(root_individual, FirstGenerationRootIndividual)
-    assert isinstance(root_individual.root_ffield, dict)
     assert root_individual.param_keys == param_keys
 
 

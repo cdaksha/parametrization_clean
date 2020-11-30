@@ -9,8 +9,6 @@ method, Successive One Parameter Parabolic Extrapolation (SOPPE).
 
 The user has the choice of specifying parameter bounds or leaving them empty in the `params` ReaxFF file.
 
-NOTE: Currently, a `fort.99` example output is also required in the reference training set. In the future, this
-shouldn't be required as the first generation initializes the population and shouldn't need cost/error data.
 """
 
 # Standard library
@@ -37,11 +35,13 @@ from parametrization_clean.infrastructure.utils.response_object import (Response
 class PopulationFileRepository(IPopulationRepository):
     GENERATION_FOLDER_PREFIX = "generation-"
     INDIVIDUAL_FOLDER_PREFIX = "child-"
+    REFERENCE_FOLDER_PREFIX = "reference-files"
 
     def __init__(self, training_set_path, population_path, settings_repository: IAllSettings,
                  current_generation_number):
         self.training_set_path = Path(training_set_path)
         self.population_path = Path(population_path)
+        self.reference_path = os.path.join(population_path, self.REFERENCE_FOLDER_PREFIX)
 
         self.training_reax_reader = ReaxReader(training_set_path)
         self.population_reax_reader = ReaxReader(population_path)
@@ -64,9 +64,11 @@ class PopulationFileRepository(IPopulationRepository):
         if self.current_generation_number == 1:
             root_individual = FirstGenerationRootIndividual(root_ffield, self.param_keys)
         else:
-            # TODO: This should probably be done in a different way
-            # For now, read the data from generation-1/child-0/fort.99 so that we don't need fort.99 in the input file
-            fort99_data = self.__find_valid_initial_fort99()
+            if self.current_generation_number == 2:
+                fort99_data, child_dir = self.__find_valid_initial_fort99()
+                self.__cache_reference_fort99(child_dir)
+            else:
+                fort99_data = self.__read_reference_fort99()
 
             fort99_extractor = Fort99Extractor(fort99_data)
             dft_energies = fort99_extractor.get_dft_energies()
@@ -194,9 +196,29 @@ class PopulationFileRepository(IPopulationRepository):
             population.extend(generation_population)
         return population
 
-    def __find_valid_initial_fort99(self) -> List:
+    def __read_reference_fort99(self) -> List:
+        self.training_reax_reader.dir_path = self.reference_path
+        fort99_data = self.training_reax_reader.read_fort99()
+        self.training_reax_reader.dir_path = self.training_set_path
+        return fort99_data
+
+    def __cache_reference_fort99(self, child_dir: str):
+        """Takes the fort.99 file found in Generation 1 in the specified child's directory
+        and caches it in the population output directory for future usage.
+        """
+        if not os.path.isdir(self.reference_path):
+            os.mkdir(self.reference_path)
+
+        reference_fort99_path = os.path.join(self.reference_path, "fort.99")
+        shutil.copy(os.path.join(child_dir, 'fort.99'), reference_fort99_path)
+
+    def __find_valid_initial_fort99(self) -> Tuple[List, str]:
+        """Go through Generation 1 and look until a completed child/case with a valid fort.99 file has been found.
+        Upon finding the child, retrieve the fort99 data for that child.
+        """
         generation_dir_path = os.path.join(self.population_path, self.GENERATION_FOLDER_PREFIX + "1")
 
+        child_dir = ""
         fort99_data = []
         for case_number in range(self.population_size):
             child_dir = os.path.join(generation_dir_path, self.INDIVIDUAL_FOLDER_PREFIX + str(case_number))
@@ -211,4 +233,4 @@ class PopulationFileRepository(IPopulationRepository):
                 # Invalid number of columns in fort.99 -> skip and continue to next case
                 continue
 
-        return fort99_data
+        return fort99_data, child_dir

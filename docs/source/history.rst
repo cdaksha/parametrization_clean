@@ -52,3 +52,9 @@ History
 --------------------
 * Removed requirement of fort.99 in the training set - now populates fort99 data in the Root Individual
   by finding a valid case from the first generation
+
+1.0.2.2 (2020-11-29)
+--------------------
+* Changed logic for retrieving fort99 data for root individual - now, only one pass of Generation 1 is required in
+  Generation 2 to find the fort99, after which the fort99 file is cached to the generation output directory,
+  which is used for subsequent generations.
